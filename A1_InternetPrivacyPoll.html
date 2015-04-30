@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title></title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: rgb(88, 72, 246)
+   }
+
+   pre .number {
+     color: rgb(0, 0, 205);
+   }
+
+   pre .comment {
+     color: rgb(76, 136, 107);
+   }
+
+   pre .keyword {
+     color: rgb(0, 0, 255);
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: rgb(3, 106, 7);
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+</head>
+
+<body>
+<p>Assignment1 Internet Privacy Poll
+1. loading and summrarying the dataset</p>
+
+<pre><code class="r">pool=read.csv(&#39;AnonymityPoll.csv&#39;)
+summary(pool)
+</code></pre>
+
+<pre><code>##   Internet.Use      Smartphone         Sex           Age       
+##  Min.   :0.0000   Min.   :0.0000   Female:505   Min.   :18.00  
+##  1st Qu.:1.0000   1st Qu.:0.0000   Male  :497   1st Qu.:37.00  
+##  Median :1.0000   Median :1.0000                Median :55.00  
+##  Mean   :0.7742   Mean   :0.5078                Mean   :52.37  
+##  3rd Qu.:1.0000   3rd Qu.:1.0000                3rd Qu.:66.00  
+##  Max.   :1.0000   Max.   :1.0000                Max.   :96.00  
+##  NA&#39;s   :1        NA&#39;s   :43                    NA&#39;s   :27     
+##           State           Region    Conservativeness Info.On.Internet
+##  California  :103   Midwest  :239   Min.   :1.000    Min.   : 0.000  
+##  Texas       : 72   Northeast:166   1st Qu.:3.000    1st Qu.: 2.000  
+##  New York    : 60   South    :359   Median :3.000    Median : 4.000  
+##  Pennsylvania: 45   West     :238   Mean   :3.277    Mean   : 3.795  
+##  Florida     : 42                   3rd Qu.:4.000    3rd Qu.: 6.000  
+##  Ohio        : 38                   Max.   :5.000    Max.   :11.000  
+##  (Other)     :642                   NA&#39;s   :62       NA&#39;s   :210     
+##  Worry.About.Info Privacy.Importance Anonymity.Possible
+##  Min.   :0.0000   Min.   :  0.00     Min.   :0.0000    
+##  1st Qu.:0.0000   1st Qu.: 41.43     1st Qu.:0.0000    
+##  Median :0.0000   Median : 68.75     Median :0.0000    
+##  Mean   :0.4886   Mean   : 62.85     Mean   :0.3692    
+##  3rd Qu.:1.0000   3rd Qu.: 88.89     3rd Qu.:1.0000    
+##  Max.   :1.0000   Max.   :100.00     Max.   :1.0000    
+##  NA&#39;s   :212      NA&#39;s   :215        NA&#39;s   :249       
+##  Tried.Masking.Identity Privacy.Laws.Effective
+##  Min.   :0.0000         Min.   :0.0000        
+##  1st Qu.:0.0000         1st Qu.:0.0000        
+##  Median :0.0000         Median :0.0000        
+##  Mean   :0.1633         Mean   :0.2617        
+##  3rd Qu.:0.0000         3rd Qu.:1.0000        
+##  Max.   :1.0000         Max.   :1.0000        
+##  NA&#39;s   :218            NA&#39;s   :108
+</code></pre>
+
+<pre><code class="r">str(pool)
+</code></pre>
+
+<pre><code>## &#39;data.frame&#39;:    1002 obs. of  13 variables:
+##  $ Internet.Use          : int  1 1 0 1 0 1 1 0 0 1 ...
+##  $ Smartphone            : int  0 0 1 0 NA 1 0 0 NA 0 ...
+##  $ Sex                   : Factor w/ 2 levels &quot;Female&quot;,&quot;Male&quot;: 2 2 1 2 1 2 1 1 2 1 ...
+##  $ Age                   : int  62 45 70 70 80 49 52 76 75 76 ...
+##  $ State                 : Factor w/ 49 levels &quot;Alabama&quot;,&quot;Arizona&quot;,..: 20 39 29 10 10 41 21 31 32 32 ...
+##  $ Region                : Factor w/ 4 levels &quot;Midwest&quot;,&quot;Northeast&quot;,..: 2 3 2 3 3 3 1 2 3 3 ...
+##  $ Conservativeness      : int  4 1 4 4 4 4 3 3 4 4 ...
+##  $ Info.On.Internet      : int  0 1 0 3 NA 6 3 NA NA 0 ...
+##  $ Worry.About.Info      : int  1 0 0 1 NA 0 1 NA NA 0 ...
+##  $ Privacy.Importance    : num  100 0 NA 88.9 NA ...
+##  $ Anonymity.Possible    : int  0 1 0 1 NA 1 0 NA NA 1 ...
+##  $ Tried.Masking.Identity: int  0 0 0 0 NA 1 0 NA NA 0 ...
+##  $ Privacy.Laws.Effective: int  0 1 NA 0 NA 0 1 NA 0 1 ...
+</code></pre>
+
+<pre><code class="r">table(pool$Smartphone)
+</code></pre>
+
+<pre><code>## 
+##   0   1 
+## 472 487
+</code></pre>
+
+<pre><code class="r">names(pool)
+</code></pre>
+
+<pre><code>##  [1] &quot;Internet.Use&quot;           &quot;Smartphone&quot;            
+##  [3] &quot;Sex&quot;                    &quot;Age&quot;                   
+##  [5] &quot;State&quot;                  &quot;Region&quot;                
+##  [7] &quot;Conservativeness&quot;       &quot;Info.On.Internet&quot;      
+##  [9] &quot;Worry.About.Info&quot;       &quot;Privacy.Importance&quot;    
+## [11] &quot;Anonymity.Possible&quot;     &quot;Tried.Masking.Identity&quot;
+## [13] &quot;Privacy.Laws.Effective&quot;
+</code></pre>
+
+<pre><code class="r">table(pool$State,pool$Region)
+</code></pre>
+
+<pre><code>##                       
+##                        Midwest Northeast South West
+##   Alabama                    0         0    11    0
+##   Arizona                    0         0     0   24
+##   Arkansas                   0         0    10    0
+##   California                 0         0     0  103
+##   Colorado                   0         0     0   19
+##   Connecticut                0         8     0    0
+##   Delaware                   0         0     6    0
+##   District of Columbia       0         0     2    0
+##   Florida                    0         0    42    0
+##   Georgia                    0         0    34    0
+##   Idaho                      0         0     0    8
+##   Illinois                  32         0     0    0
+##   Indiana                   27         0     0    0
+##   Iowa                      14         0     0    0
+##   Kansas                    14         0     0    0
+##   Kentucky                   0         0    25    0
+##   Louisiana                  0         0    17    0
+##   Maine                      0         4     0    0
+##   Maryland                   0         0    18    0
+##   Massachusetts              0        19     0    0
+##   Michigan                  31         0     0    0
+##   Minnesota                 15         0     0    0
+##   Mississippi                0         0    11    0
+##   Missouri                  26         0     0    0
+##   Montana                    0         0     0    5
+##   Nebraska                  11         0     0    0
+##   Nevada                     0         0     0    8
+##   New Hampshire              0         7     0    0
+##   New Jersey                 0        16     0    0
+##   New Mexico                 0         0     0    5
+##   New York                   0        60     0    0
+##   North Carolina             0         0    32    0
+##   North Dakota               5         0     0    0
+##   Ohio                      38         0     0    0
+##   Oklahoma                   0         0    14    0
+##   Oregon                     0         0     0   20
+##   Pennsylvania               0        45     0    0
+##   Rhode Island               0         4     0    0
+##   South Carolina             0         0    12    0
+##   South Dakota               3         0     0    0
+##   Tennessee                  0         0    17    0
+##   Texas                      0         0    72    0
+##   Utah                       0         0     0   11
+##   Vermont                    0         3     0    0
+##   Virginia                   0         0    31    0
+##   Washington                 0         0     0   28
+##   West Virginia              0         0     5    0
+##   Wisconsin                 23         0     0    0
+##   Wyoming                    0         0     0    7
+</code></pre>
+
+<pre><code class="r">sort(summary(pool$State),pool$State==&#39;South&#39;)
+</code></pre>
+
+<pre><code>## Error in sort(summary(pool$State), pool$State == &quot;South&quot;): &#39;decreasing&#39; must be a length-1 logical vector.
+## Did you intend to set &#39;partial&#39;?
+</code></pre>
+
+<pre><code class="r">#reading directly from the table is not the best idea, so we make a subset
+southsubset=subset(pool,Region==&#39;South&#39;)
+sort(table(southsubset$State))
+</code></pre>
+
+<pre><code>## 
+##              Arizona           California             Colorado 
+##                    0                    0                    0 
+##          Connecticut                Idaho             Illinois 
+##                    0                    0                    0 
+##              Indiana                 Iowa               Kansas 
+##                    0                    0                    0 
+##                Maine        Massachusetts             Michigan 
+##                    0                    0                    0 
+##            Minnesota             Missouri              Montana 
+##                    0                    0                    0 
+##             Nebraska               Nevada        New Hampshire 
+##                    0                    0                    0 
+##           New Jersey           New Mexico             New York 
+##                    0                    0                    0 
+##         North Dakota                 Ohio               Oregon 
+##                    0                    0                    0 
+##         Pennsylvania         Rhode Island         South Dakota 
+##                    0                    0                    0 
+##                 Utah              Vermont           Washington 
+##                    0                    0                    0 
+##            Wisconsin              Wyoming District of Columbia 
+##                    0                    0                    2 
+##        West Virginia             Delaware             Arkansas 
+##                    5                    6                   10 
+##              Alabama          Mississippi       South Carolina 
+##                   11                   11                   12 
+##             Oklahoma            Louisiana            Tennessee 
+##                   14                   17                   17 
+##             Maryland             Kentucky             Virginia 
+##                   18                   25                   31 
+##       North Carolina              Georgia              Florida 
+##                   32                   34                   42 
+##                Texas 
+##                   72
+</code></pre>
+
+<ol>
+<li>Internet and smartphone users</li>
+</ol>
+
+<pre><code class="r">table(pool$Smartphone,pool$Internet.Use)
+</code></pre>
+
+<pre><code>##    
+##       0   1
+##   0 186 285
+##   1  17 470
+</code></pre>
+
+<pre><code class="r">table(is.na(pool$Internet.Use))
+</code></pre>
+
+<pre><code>## 
+## FALSE  TRUE 
+##  1001     1
+</code></pre>
+
+<pre><code class="r">table(is.na(pool$Smartphone))
+</code></pre>
+
+<pre><code>## 
+## FALSE  TRUE 
+##   959    43
+</code></pre>
+
+<pre><code class="r">limited=subset(pool,Internet.Use==1|Smartphone==1)
+</code></pre>
+
+<p>3.Summarize opinions about internet privacy</p>
+
+<pre><code class="r">summary(limited)
+</code></pre>
+
+<pre><code>##   Internet.Use      Smartphone         Sex           Age       
+##  Min.   :0.0000   Min.   :0.0000   Female:392   Min.   :18.00  
+##  1st Qu.:1.0000   1st Qu.:0.0000   Male  :400   1st Qu.:33.00  
+##  Median :1.0000   Median :1.0000                Median :51.00  
+##  Mean   :0.9785   Mean   :0.6308                Mean   :48.57  
+##  3rd Qu.:1.0000   3rd Qu.:1.0000                3rd Qu.:62.00  
+##  Max.   :1.0000   Max.   :1.0000                Max.   :93.00  
+##                   NA&#39;s   :20                    NA&#39;s   :22     
+##             State           Region    Conservativeness Info.On.Internet
+##  California    : 89   Midwest  :172   Min.   :1.000    Min.   : 0.000  
+##  Texas         : 57   Northeast:128   1st Qu.:3.000    1st Qu.: 2.000  
+##  New York      : 45   South    :288   Median :3.000    Median : 4.000  
+##  Pennsylvania  : 33   West     :204   Mean   :3.237    Mean   : 3.795  
+##  Florida       : 32                   3rd Qu.:4.000    3rd Qu.: 6.000  
+##  North Carolina: 28                   Max.   :5.000    Max.   :11.000  
+##  (Other)       :508                   NA&#39;s   :45                       
+##  Worry.About.Info Privacy.Importance Anonymity.Possible
+##  Min.   :0.0000   Min.   :  0.00     Min.   :0.0000    
+##  1st Qu.:0.0000   1st Qu.: 41.43     1st Qu.:0.0000    
+##  Median :0.0000   Median : 68.75     Median :0.0000    
+##  Mean   :0.4886   Mean   : 62.85     Mean   :0.3692    
+##  3rd Qu.:1.0000   3rd Qu.: 88.89     3rd Qu.:1.0000    
+##  Max.   :1.0000   Max.   :100.00     Max.   :1.0000    
+##  NA&#39;s   :2        NA&#39;s   :5          NA&#39;s   :39        
+##  Tried.Masking.Identity Privacy.Laws.Effective
+##  Min.   :0.0000         Min.   :0.0000        
+##  1st Qu.:0.0000         1st Qu.:0.0000        
+##  Median :0.0000         Median :0.0000        
+##  Mean   :0.1633         Mean   :0.2559        
+##  3rd Qu.:0.0000         3rd Qu.:1.0000        
+##  Max.   :1.0000         Max.   :1.0000        
+##  NA&#39;s   :8              NA&#39;s   :65
+</code></pre>
+
+<pre><code class="r">table(limited$Info.On.Internet)
+</code></pre>
+
+<pre><code>## 
+##   0   1   2   3   4   5   6   7   8   9  10  11 
+## 105  84  95 101 104  94  67  63  40  18  13   8
+</code></pre>
+
+<pre><code class="r">table(limited$Worry.about.Info,na.rm=TRUE)
+</code></pre>
+
+<pre><code>## Error in table(limited$Worry.about.Info, na.rm = TRUE): all arguments must have the same length
+</code></pre>
+
+<ol>
+<li>Relating dempgraphics to pooling results</li>
+</ol>
+
+<pre><code class="r">names(limited)
+</code></pre>
+
+<pre><code>##  [1] &quot;Internet.Use&quot;           &quot;Smartphone&quot;            
+##  [3] &quot;Sex&quot;                    &quot;Age&quot;                   
+##  [5] &quot;State&quot;                  &quot;Region&quot;                
+##  [7] &quot;Conservativeness&quot;       &quot;Info.On.Internet&quot;      
+##  [9] &quot;Worry.About.Info&quot;       &quot;Privacy.Importance&quot;    
+## [11] &quot;Anonymity.Possible&quot;     &quot;Tried.Masking.Identity&quot;
+## [13] &quot;Privacy.Laws.Effective&quot;
+</code></pre>
+
+<pre><code class="r">hist(limited$Age)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-4"/> </p>
+
+<pre><code class="r">plot(limited$Age,limited$Info.On.Internet)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-4"/> </p>
+
+<pre><code class="r">table(limited$Age,limited$Info.On.Internet)
+</code></pre>
+
+<pre><code>##     
+##      0 1 2 3 4 5 6 7 8 9 10 11
+##   18 1 2 0 0 1 2 5 1 0 0  1  0
+##   19 0 1 2 3 1 1 1 2 4 0  0  0
+##   20 1 1 3 4 1 0 0 0 1 1  0  0
+##   21 1 1 1 0 2 3 2 0 2 1  1  0
+##   22 0 1 1 2 2 3 1 3 1 0  1  0
+##   23 2 0 0 2 3 2 3 5 1 0  0  0
+##   24 1 1 0 0 1 0 2 3 1 0  1  0
+##   25 0 0 1 0 3 1 0 0 0 0  0  0
+##   26 0 1 2 3 0 1 3 1 2 1  0  0
+##   27 0 0 0 3 1 2 3 1 1 0  0  0
+##   28 1 1 1 1 1 3 3 1 2 0  0  0
+##   29 0 0 3 1 0 3 1 3 0 0  0  0
+##   30 0 1 0 4 0 4 2 0 2 1  0  0
+##   31 1 1 0 1 1 2 1 1 2 0  0  0
+##   32 1 0 1 1 1 0 0 0 1 0  1  0
+##   33 0 1 3 4 2 1 2 4 0 0  0  0
+##   34 0 0 0 2 1 1 1 1 1 0  0  0
+##   35 0 0 2 2 4 1 1 1 0 0  0  0
+##   36 2 0 1 1 0 2 1 0 1 1  1  1
+##   37 2 0 4 1 2 0 0 0 1 0  0  0
+##   38 0 2 0 1 2 1 0 0 0 0  0  0
+##   39 1 0 2 1 5 0 1 0 1 0  0  0
+##   40 0 0 3 0 3 3 0 0 0 0  0  0
+##   41 3 1 2 1 2 0 0 0 0 0  0  0
+##   42 0 0 0 2 2 1 1 1 0 0  1  0
+##   43 3 1 0 1 3 0 2 1 2 0  1  0
+##   44 1 1 1 2 0 3 0 2 0 1  0  0
+##   45 1 1 1 1 5 2 0 0 0 0  0  0
+##   46 1 1 1 0 3 0 0 1 0 0  0  0
+##   47 2 0 3 1 2 0 0 0 0 0  0  0
+##   48 2 2 1 0 0 2 4 1 2 0  0  0
+##   49 2 2 3 2 1 2 3 0 0 0  1  0
+##   50 1 4 5 1 0 3 4 1 1 0  0  0
+##   51 1 1 2 0 2 0 1 0 2 0  2  0
+##   52 3 4 2 3 0 1 0 2 0 0  0  0
+##   53 6 2 3 3 3 5 0 0 1 1  0  0
+##   54 1 0 0 1 2 1 0 0 1 0  0  2
+##   55 1 3 1 5 1 0 5 3 0 0  0  0
+##   56 2 3 1 1 3 3 2 0 0 2  0  1
+##   57 2 4 2 5 1 2 1 3 1 0  1  0
+##   58 1 2 2 1 3 1 2 1 0 2  0  0
+##   59 3 3 3 0 1 2 2 2 2 0  0  1
+##   60 6 6 2 4 2 5 0 1 0 2  0  0
+##   61 1 3 1 1 2 1 1 0 0 0  0  0
+##   62 4 1 4 3 4 2 1 3 2 0  0  0
+##   63 1 1 1 2 1 0 0 1 0 0  0  0
+##   64 5 2 2 2 1 3 0 2 1 2  1  1
+##   65 4 2 2 2 1 2 1 1 0 0  0  0
+##   66 0 2 1 2 2 1 1 3 1 0  0  0
+##   67 3 3 1 2 1 1 0 0 0 0  0  0
+##   68 2 1 2 1 2 0 0 0 0 0  0  1
+##   69 3 3 0 0 1 1 0 1 0 1  0  0
+##   70 3 0 0 3 2 2 0 0 0 0  0  0
+##   71 0 1 0 3 3 1 0 1 0 0  0  0
+##   72 3 0 3 1 1 2 0 0 0 0  0  0
+##   73 1 0 0 1 2 2 0 1 0 0  0  0
+##   74 1 1 0 3 1 1 0 0 0 0  0  0
+##   75 2 0 1 0 0 0 0 1 0 0  0  0
+##   76 1 1 2 1 0 0 0 0 0 0  0  0
+##   77 3 0 1 0 3 0 0 0 0 1  0  0
+##   78 1 1 1 0 0 1 0 0 0 0  0  0
+##   79 0 0 3 0 0 1 0 0 0 0  0  0
+##   80 2 0 0 0 0 1 0 0 0 0  0  0
+##   81 3 0 0 1 0 1 0 0 0 0  0  0
+##   82 0 0 0 0 0 0 0 1 0 0  0  0
+##   83 0 0 3 0 1 0 0 1 0 0  0  0
+##   86 0 1 0 0 0 0 0 0 0 0  0  0
+##   88 0 1 0 0 0 0 0 0 0 0  0  0
+##   91 0 0 1 0 0 1 0 0 0 0  0  0
+##   92 1 0 0 0 0 0 0 0 0 0  0  0
+##   93 0 0 0 1 0 0 0 0 0 0  0  0
+</code></pre>
+
+<pre><code class="r">plot(jitter(limited$Age),jitter(limited$Info.On.Internet))
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-4"/> </p>
+
+<pre><code class="r">#summary the Info.On.Internet by smartphone groups  
+tapply(limited$Info.On.Internet,limited$Smartphone,summary)
+</code></pre>
+
+<pre><code>## $`0`
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   0.000   1.000   3.000   2.923   5.000  11.000 
+## 
+## $`1`
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   0.000   2.000   4.000   4.368   6.000  11.000
+</code></pre>
+
+<pre><code class="r">tapply(limited$Tried.Masking.Identity,limited$Smartphone,summary)
+</code></pre>
+
+<pre><code>## $`0`
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##  0.0000  0.0000  0.0000  0.1174  0.0000  1.0000       4 
+## 
+## $`1`
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##  0.0000  0.0000  0.0000  0.1925  0.0000  1.0000       4
+</code></pre>
+
+</body>
+
+</html>
+

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title></title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: rgb(88, 72, 246)
+   }
+
+   pre .number {
+     color: rgb(0, 0, 205);
+   }
+
+   pre .comment {
+     color: rgb(76, 136, 107);
+   }
+
+   pre .keyword {
+     color: rgb(0, 0, 255);
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: rgb(3, 106, 7);
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+</head>
+
+<body>
+<p>Detecting Vandalism on Wikipedia
+Bags of words</p>
+
+<pre><code class="r">wiki=read.csv(&#39;wiki.csv&#39;)
+summary(wiki)
+</code></pre>
+
+<pre><code>##       X.1             X            Vandal           Minor       
+##  Min.   :   1   Min.   :   1   Min.   :0.0000   Min.   :0.0000  
+##  1st Qu.:1001   1st Qu.:1184   1st Qu.:0.0000   1st Qu.:0.0000  
+##  Median :2016   Median :2318   Median :0.0000   Median :0.0000  
+##  Mean   :2040   Mean   :2322   Mean   :0.4683   Mean   :0.2853  
+##  3rd Qu.:3069   3rd Qu.:3467   3rd Qu.:1.0000   3rd Qu.:1.0000  
+##  Max.   :4135   Max.   :4639   Max.   :1.0000   Max.   :1.0000  
+##                                                                 
+##     Loggedin                                 Added     
+##  Min.   :0.0000                                 :1481  
+##  1st Qu.:0.0000    xmlspacepreserveotheruses4the:   6  
+##  Median :1.0000    encompassing                 :   5  
+##  Mean   :0.6659    xmlspacepreserve             :   5  
+##  3rd Qu.:1.0000    suck you                     :   4  
+##  Max.   :1.0000    xmlspacepreserveabouthuman   :   4  
+##                   (Other)                       :2371  
+##                            Removed    
+##                                :1960  
+##   xmlspacepreserveotheruses4the:   6  
+##   xmlspacepreserveportal       :   6  
+##   encompassing                 :   5  
+##   xmlspacepreserveaboutthe     :   5  
+##   frege                        :   4  
+##  (Other)                       :1890
+</code></pre>
+
+<pre><code class="r">#convert Vandal to factor
+wiki$Vandal=as.factor(wiki$Vandal)
+table(wiki$Vandal)
+</code></pre>
+
+<pre><code>## 
+##    0    1 
+## 2061 1815
+</code></pre>
+
+<pre><code class="r">str(wiki)
+</code></pre>
+
+<pre><code>## &#39;data.frame&#39;:    3876 obs. of  7 variables:
+##  $ X.1     : int  1 2 3 4 5 6 7 8 9 10 ...
+##  $ X       : int  1 2 3 4 5 6 7 8 9 10 ...
+##  $ Vandal  : Factor w/ 2 levels &quot;0&quot;,&quot;1&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ Minor   : int  1 1 0 1 1 0 0 0 1 0 ...
+##  $ Loggedin: int  1 1 1 0 1 1 1 1 1 0 ...
+##  $ Added   : Factor w/ 2278 levels &quot; &quot;,&quot;  represent psycholinguisticspsycholinguistics orthographyorthography help all actions through ethnologue relationships linguis&quot;| __truncated__,..: 3 2160 1 89 2 1597 878 972 124 1 ...
+##  $ Removed : Factor w/ 1808 levels &quot; &quot;,&quot;  represent psycholinguisticspsycholinguistics orthographyorthography help all actions through ethnologue relationships linguis&quot;| __truncated__,..: 1 1546 1349 2 69 1230 675 1 1750 1 ...
+</code></pre>
+
+<pre><code class="r">install.packages(&#39;tm&#39;)
+</code></pre>
+
+<pre><code>## Installing package into &#39;C:/Users/WuY/Documents/R/win-library/3.1&#39;
+## (as &#39;lib&#39; is unspecified)
+</code></pre>
+
+<pre><code>## Error in contrib.url(repos, &quot;source&quot;): trying to use CRAN without setting a mirror
+</code></pre>
+
+<pre><code class="r">require(&#39;tm&#39;)
+</code></pre>
+
+<pre><code>## Loading required package: tm
+</code></pre>
+
+<pre><code>## Warning: package &#39;tm&#39; was built under R version 3.1.3
+</code></pre>
+
+<pre><code>## Loading required package: NLP
+</code></pre>
+
+<pre><code>## Warning: package &#39;NLP&#39; was built under R version 3.1.3
+</code></pre>
+
+<pre><code class="r">#create the corpus for the added column
+corpusAdded=Corpus(VectorSource(wiki$Added))
+#remove the english language stopwords
+corpusAdded=tm_map(corpusAdded,removeWords,stopwords(&#39;English&#39;))
+#stem the words
+install.packages(&#39;SnowballC&#39;)
+</code></pre>
+
+<pre><code>## Installing package into &#39;C:/Users/WuY/Documents/R/win-library/3.1&#39;
+## (as &#39;lib&#39; is unspecified)
+</code></pre>
+
+<pre><code>## Error in contrib.url(repos, &quot;source&quot;): trying to use CRAN without setting a mirror
+</code></pre>
+
+<pre><code class="r">require(&#39;SnowballC&#39;)
+</code></pre>
+
+<pre><code>## Loading required package: SnowballC
+</code></pre>
+
+<pre><code>## Warning: package &#39;SnowballC&#39; was built under R version 3.1.3
+</code></pre>
+
+<pre><code class="r">corpusAdded=tm_map(corpusAdded,stemDocument)
+dtmAdded=DocumentTermMatrix(corpusAdded)
+dtmAdded
+</code></pre>
+
+<pre><code>## &lt;&lt;DocumentTermMatrix (documents: 3876, terms: 6675)&gt;&gt;
+## Non-/sparse entries: 15368/25856932
+## Sparsity           : 100%
+## Maximal term length: 784
+## Weighting          : term frequency (tf)
+</code></pre>
+
+<pre><code class="r"># Filter out sparse terms by keeping only terms that appear in 0.3% or more of the revisions. 
+sparseAdded=removeSparseTerms(dtmAdded,0.997)
+sparseAdded
+</code></pre>
+
+<pre><code>## &lt;&lt;DocumentTermMatrix (documents: 3876, terms: 166)&gt;&gt;
+## Non-/sparse entries: 2681/640735
+## Sparsity           : 100%
+## Maximal term length: 28
+## Weighting          : term frequency (tf)
+</code></pre>
+
+<pre><code class="r">dim(sparseAdded)
+</code></pre>
+
+<pre><code>## [1] 3876  166
+</code></pre>
+
+<pre><code class="r">#convert sparse Added to a dataframe
+wordsAdded=as.data.frame(as.matrix(sparseAdded))
+#prepend all the words with letter A
+colnames(wordsAdded)
+</code></pre>
+
+<pre><code>##   [1] &quot;accord&quot;                       &quot;actual&quot;                      
+##   [3] &quot;ago&quot;                          &quot;agre&quot;                        
+##   [5] &quot;analog&quot;                       &quot;appar&quot;                       
+##   [7] &quot;arbitrari&quot;                    &quot;believ&quot;                      
+##   [9] &quot;biolog&quot;                       &quot;biologyanalog&quot;               
+##  [11] &quot;bodi&quot;                         &quot;call&quot;                        
+##  [13] &quot;clear&quot;                        &quot;close&quot;                       
+##  [15] &quot;combin&quot;                       &quot;communic&quot;                    
+##  [17] &quot;communiti&quot;                    &quot;compar&quot;                      
+##  [19] &quot;complet&quot;                      &quot;concept&quot;                     
+##  [21] &quot;consid&quot;                       &quot;contain&quot;                     
+##  [23] &quot;converg&quot;                      &quot;correl&quot;                      
+##  [25] &quot;cours&quot;                        &quot;creat&quot;                       
+##  [27] &quot;croatian&quot;                     &quot;cultur&quot;                      
+##  [29] &quot;defin&quot;                        &quot;deriv&quot;                       
+##  [31] &quot;describ&quot;                      &quot;develop&quot;                     
+##  [33] &quot;differ&quot;                       &quot;direct&quot;                      
+##  [35] &quot;discuss&quot;                      &quot;distinct&quot;                    
+##  [37] &quot;dutch&quot;                        &quot;estim&quot;                       
+##  [39] &quot;exampl&quot;                       &quot;exist&quot;                       
+##  [41] &quot;experiment&quot;                   &quot;express&quot;                     
+##  [43] &quot;famili&quot;                       &quot;fantasi&quot;                     
+##  [45] &quot;featur&quot;                       &quot;first&quot;                       
+##  [47] &quot;follow&quot;                       &quot;forc&quot;                        
+##  [49] &quot;form&quot;                         &quot;fuck&quot;                        
+##  [51] &quot;general&quot;                      &quot;geograph&quot;                    
+##  [53] &quot;german&quot;                       &quot;gestur&quot;                      
+##  [55] &quot;get&quot;                          &quot;govern&quot;                      
+##  [57] &quot;group&quot;                        &quot;help&quot;                        
+##  [59] &quot;icon&quot;                         &quot;idea&quot;                        
+##  [61] &quot;identifi&quot;                     &quot;ideolog&quot;                     
+##  [63] &quot;import&quot;                       &quot;imposs&quot;                      
+##  [65] &quot;includ&quot;                       &quot;individu&quot;                    
+##  [67] &quot;intellig&quot;                     &quot;interact&quot;                    
+##  [69] &quot;invent&quot;                       &quot;just&quot;                        
+##  [71] &quot;know&quot;                         &quot;langesnada&quot;                  
+##  [73] &quot;languagecroatian&quot;             &quot;languageenglish&quot;             
+##  [75] &quot;languageserbian&quot;              &quot;languagespanish&quot;             
+##  [77] &quot;learn&quot;                        &quot;least&quot;                       
+##  [79] &quot;linguist&quot;                     &quot;literari&quot;                    
+##  [81] &quot;logic&quot;                        &quot;mainlinguist&quot;                
+##  [83] &quot;mainorigin&quot;                   &quot;make&quot;                        
+##  [85] &quot;manipul&quot;                      &quot;map&quot;                         
+##  [87] &quot;mean&quot;                         &quot;million&quot;                     
+##  [89] &quot;must&quot;                         &quot;name&quot;                        
+##  [91] &quot;note&quot;                         &quot;noth&quot;                        
+##  [93] &quot;notion&quot;                       &quot;number&quot;                      
+##  [95] &quot;object&quot;                       &quot;onlin&quot;                       
+##  [97] &quot;onto&quot;                         &quot;origin&quot;                      
+##  [99] &quot;parallel&quot;                     &quot;part&quot;                        
+## [101] &quot;pattern&quot;                      &quot;perform&quot;                     
+## [103] &quot;person&quot;                       &quot;phenomenon&quot;                  
+## [105] &quot;popul&quot;                        &quot;possibl&quot;                     
+## [107] &quot;practic&quot;                      &quot;present&quot;                     
+## [109] &quot;principl&quot;                     &quot;process&quot;                     
+## [111] &quot;promin&quot;                       &quot;properti&quot;                    
+## [113] &quot;provid&quot;                       &quot;purpos&quot;                      
+## [115] &quot;quot&quot;                         &quot;quothopequot&quot;                
+## [117] &quot;quotloglangsquot&quot;             &quot;quotnothingquot&quot;             
+## [119] &quot;reason&quot;                       &quot;recent&quot;                      
+## [121] &quot;refer&quot;                        &quot;regular&quot;                     
+## [123] &quot;relat&quot;                        &quot;relationship&quot;                
+## [125] &quot;repres&quot;                       &quot;research&quot;                    
+## [127] &quot;respect&quot;                      &quot;result&quot;                      
+## [129] &quot;say&quot;                          &quot;sentenc&quot;                     
+## [131] &quot;serbian&quot;                      &quot;set&quot;                         
+## [133] &quot;similar&quot;                      &quot;sound&quot;                       
+## [135] &quot;spanish&quot;                      &quot;speak&quot;                       
+## [137] &quot;stand&quot;                        &quot;standard&quot;                    
+## [139] &quot;stem&quot;                         &quot;strive&quot;                      
+## [141] &quot;structur&quot;                     &quot;studi&quot;                       
+## [143] &quot;subject&quot;                      &quot;symbol&quot;                      
+## [145] &quot;talk&quot;                         &quot;ten&quot;                         
+## [147] &quot;think&quot;                        &quot;thought&quot;                     
+## [149] &quot;thousand&quot;                     &quot;tolkien&quot;                     
+## [151] &quot;tri&quot;                          &quot;type&quot;                        
+## [153] &quot;understood&quot;                   &quot;unit&quot;                        
+## [155] &quot;univers&quot;                      &quot;use&quot;                         
+## [157] &quot;utter&quot;                        &quot;verb&quot;                        
+## [159] &quot;want&quot;                         &quot;wide&quot;                        
+## [161] &quot;will&quot;                         &quot;work&quot;                        
+## [163] &quot;write&quot;                        &quot;writer&quot;                      
+## [165] &quot;xmlspacepreserveotheruses4th&quot; &quot;year&quot;
+</code></pre>
+
+<pre><code class="r">colnames(wordsAdded)=paste(&#39;A&#39;,colnames(wordsAdded))
+</code></pre>
+
+<p>Create a wordsRemoved data frame</p>
+
+<pre><code class="r">names(wiki)
+</code></pre>
+
+<pre><code>## [1] &quot;X.1&quot;      &quot;X&quot;        &quot;Vandal&quot;   &quot;Minor&quot;    &quot;Loggedin&quot; &quot;Added&quot;   
+## [7] &quot;Removed&quot;
+</code></pre>
+
+<pre><code class="r">corpusRemoved=Corpus(VectorSource(wiki$Removed))
+corpusRemoved=tm_map(corpusRemoved,removeWords,stopwords(&#39;English&#39;))
+corpusRemoved=tm_map(corpusRemoved,stemDocument)
+dtmRemoved=DocumentTermMatrix(corpusRemoved)
+dtmRemoved
+</code></pre>
+
+<pre><code>## &lt;&lt;DocumentTermMatrix (documents: 3876, terms: 5403)&gt;&gt;
+## Non-/sparse entries: 13293/20928735
+## Sparsity           : 100%
+## Maximal term length: 784
+## Weighting          : term frequency (tf)
+</code></pre>
+
+<pre><code class="r">sparseRemoved=removeSparseTerms(dtmRemoved,0.997)
+sparseRemoved
+</code></pre>
+
+<pre><code>## &lt;&lt;DocumentTermMatrix (documents: 3876, terms: 162)&gt;&gt;
+## Non-/sparse entries: 2552/625360
+## Sparsity           : 100%
+## Maximal term length: 28
+## Weighting          : term frequency (tf)
+</code></pre>
+
+<pre><code class="r">dim(sparseRemoved)
+</code></pre>
+
+<pre><code>## [1] 3876  162
+</code></pre>
+
+<pre><code class="r">wordsRemoved=as.data.frame(as.matrix(sparseRemoved))
+colnames(wordsRemoved)
+</code></pre>
+
+<pre><code>##   [1] &quot;2000000&quot;                      &quot;40000&quot;                       
+##   [3] &quot;accord&quot;                       &quot;actual&quot;                      
+##   [5] &quot;ago&quot;                          &quot;agre&quot;                        
+##   [7] &quot;analog&quot;                       &quot;appar&quot;                       
+##   [9] &quot;arbitrari&quot;                    &quot;believ&quot;                      
+##  [11] &quot;bigger&quot;                       &quot;biolog&quot;                      
+##  [13] &quot;biologyanalog&quot;                &quot;bodi&quot;                        
+##  [15] &quot;call&quot;                         &quot;care&quot;                        
+##  [17] &quot;clear&quot;                        &quot;close&quot;                       
+##  [19] &quot;combin&quot;                       &quot;communic&quot;                    
+##  [21] &quot;communiti&quot;                    &quot;compar&quot;                      
+##  [23] &quot;complet&quot;                      &quot;concept&quot;                     
+##  [25] &quot;contact&quot;                      &quot;contain&quot;                     
+##  [27] &quot;correl&quot;                       &quot;cours&quot;                       
+##  [29] &quot;creat&quot;                        &quot;cromagnon&quot;                   
+##  [31] &quot;defin&quot;                        &quot;deriv&quot;                       
+##  [33] &quot;develop&quot;                      &quot;differ&quot;                      
+##  [35] &quot;direct&quot;                       &quot;discuss&quot;                     
+##  [37] &quot;distinct&quot;                     &quot;dutch&quot;                       
+##  [39] &quot;easytolearn&quot;                  &quot;estim&quot;                       
+##  [41] &quot;exampl&quot;                       &quot;experiment&quot;                  
+##  [43] &quot;express&quot;                      &quot;famili&quot;                      
+##  [45] &quot;fantasi&quot;                      &quot;featur&quot;                      
+##  [47] &quot;first&quot;                        &quot;follow&quot;                      
+##  [49] &quot;forc&quot;                         &quot;forti&quot;                       
+##  [51] &quot;fuck&quot;                         &quot;general&quot;                     
+##  [53] &quot;geograph&quot;                     &quot;german&quot;                      
+##  [55] &quot;gestur&quot;                       &quot;get&quot;                         
+##  [57] &quot;given&quot;                        &quot;govern&quot;                      
+##  [59] &quot;group&quot;                        &quot;habili&quot;                      
+##  [61] &quot;homo&quot;                         &quot;homolog&quot;                     
+##  [63] &quot;icon&quot;                         &quot;idea&quot;                        
+##  [65] &quot;ideolog&quot;                      &quot;imposs&quot;                      
+##  [67] &quot;includ&quot;                       &quot;individu&quot;                    
+##  [69] &quot;intern&quot;                       &quot;just&quot;                        
+##  [71] &quot;know&quot;                         &quot;langesnada&quot;                  
+##  [73] &quot;languageenglish&quot;              &quot;languagespanish&quot;             
+##  [75] &quot;learn&quot;                        &quot;least&quot;                       
+##  [77] &quot;linguist&quot;                     &quot;linguisticssent&quot;             
+##  [79] &quot;literari&quot;                     &quot;logic&quot;                       
+##  [81] &quot;mainlinguist&quot;                 &quot;mainorigin&quot;                  
+##  [83] &quot;make&quot;                         &quot;manipul&quot;                     
+##  [85] &quot;map&quot;                          &quot;mean&quot;                        
+##  [87] &quot;method&quot;                       &quot;million&quot;                     
+##  [89] &quot;must&quot;                         &quot;name&quot;                        
+##  [91] &quot;nation&quot;                       &quot;notion&quot;                      
+##  [93] &quot;object&quot;                       &quot;onlin&quot;                       
+##  [95] &quot;onto&quot;                         &quot;origin&quot;                      
+##  [97] &quot;parallel&quot;                     &quot;part&quot;                        
+##  [99] &quot;pattern&quot;                      &quot;peopl&quot;                       
+## [101] &quot;person&quot;                       &quot;phenomenon&quot;                  
+## [103] &quot;popul&quot;                        &quot;possibl&quot;                     
+## [105] &quot;practic&quot;                      &quot;present&quot;                     
+## [107] &quot;principl&quot;                     &quot;process&quot;                     
+## [109] &quot;promin&quot;                       &quot;properti&quot;                    
+## [111] &quot;provid&quot;                       &quot;purpos&quot;                      
+## [113] &quot;quit&quot;                         &quot;quot&quot;                        
+## [115] &quot;quothopequot&quot;                 &quot;quotloglangsquot&quot;            
+## [117] &quot;quotmeowquot&quot;                 &quot;quotnothingquot&quot;             
+## [119] &quot;reason&quot;                       &quot;recent&quot;                      
+## [121] &quot;refer&quot;                        &quot;regular&quot;                     
+## [123] &quot;relat&quot;                        &quot;relationship&quot;                
+## [125] &quot;repres&quot;                       &quot;requir&quot;                      
+## [127] &quot;research&quot;                     &quot;respect&quot;                     
+## [129] &quot;result&quot;                       &quot;say&quot;                         
+## [131] &quot;sentenc&quot;                      &quot;serv&quot;                        
+## [133] &quot;set&quot;                          &quot;similar&quot;                     
+## [135] &quot;sound&quot;                        &quot;spanish&quot;                     
+## [137] &quot;speak&quot;                        &quot;stand&quot;                       
+## [139] &quot;standard&quot;                     &quot;stem&quot;                        
+## [141] &quot;strive&quot;                       &quot;studi&quot;                       
+## [143] &quot;subject&quot;                      &quot;suggest&quot;                     
+## [145] &quot;symbol&quot;                       &quot;think&quot;                       
+## [147] &quot;thought&quot;                      &quot;thousand&quot;                    
+## [149] &quot;tolkien&quot;                      &quot;tri&quot;                         
+## [151] &quot;type&quot;                         &quot;understood&quot;                  
+## [153] &quot;unit&quot;                         &quot;use&quot;                         
+## [155] &quot;verb&quot;                         &quot;want&quot;                        
+## [157] &quot;wide&quot;                         &quot;will&quot;                        
+## [159] &quot;work&quot;                         &quot;writer&quot;                      
+## [161] &quot;xmlspacepreserveotheruses4th&quot; &quot;year&quot;
+</code></pre>
+
+<pre><code class="r">colnames(wordsRemoved)=paste(&#39;A&#39;,colnames(wordsRemoved))
+</code></pre>
+
+<p>Combine 2 data frame</p>
+
+<pre><code class="r">wikiWords=cbind(wordsAdded,wordsRemoved)
+wikiWords$Vandal=wiki$Vandal
+require(&#39;caTools&#39;)
+</code></pre>
+
+<pre><code>## Loading required package: caTools
+</code></pre>
+
+<pre><code>## Warning: package &#39;caTools&#39; was built under R version 3.1.3
+</code></pre>
+
+<pre><code class="r">set.seed(123)
+spl=sample.split(wikiWords,SplitRatio=0.7)
+train=subset(wikiWords,spl==TRUE)
+test=subset(wikiWords,spl==FALSE)
+table(test$Vandal)
+</code></pre>
+
+<pre><code>## 
+##   0   1 
+## 622 542
+</code></pre>
+
+<p>Build a CART model to predict Vandal using all the variables as independent variabels</p>
+
+<pre><code class="r">require(&#39;rpart&#39;)
+</code></pre>
+
+<pre><code>## Loading required package: rpart
+</code></pre>
+
+<pre><code class="r">require(&#39;rpart.plot&#39;)
+</code></pre>
+
+<pre><code>## Loading required package: rpart.plot
+</code></pre>
+
+<pre><code>## Warning: package &#39;rpart.plot&#39; was built under R version 3.1.3
+</code></pre>
+
+<pre><code class="r">CARTfit1=rpart(Vandal~.,data=train,method=&#39;class&#39;)
+testCART1=predict(CARTfit1,newdata=test,type=&#39;class&#39;)
+table(testCART1,test$Vandal)
+</code></pre>
+
+<pre><code>##          
+## testCART1   0   1
+##         0 622 528
+##         1   0  14
+</code></pre>
+
+<pre><code class="r">prp(CARTfit1)
+</code></pre>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAAH4CAMAAACR9g9NAAAABlBMVEUAAAD///+l2Z/dAAAACXBIWXMAAAsSAAALEgHS3X78AAAK70lEQVR4nO2di3aiCBAF8f9/endmQgTFB4/WvlTVmU3EUeh7Kwgm2WG4CJLh2wPId1A8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8lNOLHxa5ecR468/ChvVPtvR62xtzHE2XOapYLnp278TcKvHDzXNun/pgVU3U95iijEfxJvf/L2L4cfjv5t+lf/vm9b/JnePTbsTfCX1j21+kxxRlrBE/Kh7vuf90mezdd68S94eQlTN9lh5TlLFB/JLx6WF8fORl9pyFA4Xiv8gx4q8v9U/2+HFpzba/SI8pynhd/uRc+7H430PAVe3dMX5cWrHtb9JjijKGnw/jy/W4p07FX65yF8QPS18Gk3VPHrgsfjxNHG7u/zI9pijjR/zPidn454H4xy/uk7P6u3P34eYp822PX3aTbfaovMcUZVzFj+4m939i25OvNsV/kGn5Nzc+um3Ff5ir5kfH+A9se7rhD237NT2mKOPmgD6//xPbXnH/Z+kxRRmTM7e7+z+x7TX3f5YeU5Tx6Ccib8V+8qB3nv9o0z0q7zFFHcs/lX0v9bNHvWV+x7bLaTJGR55Xk15c+vyFvKgmvLnw8Qt51Ux4c+Hj1/G6mOzqsqcv5I1ioruLHr6QHe/XMogevpC9b/Tbkzx7IW/WEtxe8OiFvN1Kbn25k1eieCYrSontL3bwStaUklpg6tyVrOsktMHQsUtRPJO1lWRWmDl1JesbiewwcuhSFM9kSyGJJSbOXMqmQgJbDBy5lI195NWYN3EpW+vIqzFv4lI21xHXY9zApexoI63ItHlrUTyTXWWENRk2bik7u8iqMmvaWvZ2EdVl1LC17K4iqsuoYWvZX0VSmUmz1nJEE0FtBo1ayzFF5NSZM2kximdyVA8xfcYMWsxhPaQUmjJnMcfVkFJoypy1HNlCSKMhYxZzaAsZlWZMWczBJUR0GjFkNYpncngHCaUmzFhMQQUBrQaMWE1FBf1r7T9hNSUN9K+1/4SBdPo3ax/RfLxIfjrtrb71cJkMC7f60Xm2TKY7euN2G4+WyfBkqRN9JwtF8VCGp4t9aDvYfq7vqO7eWy2ecF/fgu15NzZMPl4a99t2sP3Mrvh8+1fzxfG+yWWlt270ZgVt+2072G5+r/k9TK8EPb0U7O8Db8TveQP+bwXu8V/kxXXhJy/rl9mjjnilV/wXeSj+Mj+cTx5/ud33N2x19qlxv20H280r8Y/3+HFp01Znnxr323awvUyu7rckfuZ4YT/3rD6Vn4tHjzf/qp4e46dq54/a9VKv+G9zI/4q9O6s/vqM+an/xu1OPnaut+9kofgtWyrDg9vNaDxaKpNzh8btNh4tloffKe5E6+FS8XfumvE4LKqGv6ASPwmL6uEPpMBPs5KK+AMp7/OspCYuqLgvooKa+AMo7quooCoupLSvk3K6uIDCvhEU08UfMGHfCYop48LJ+l5OShsXTtQ3c1LqwCR9Nyakjgsl6fspGX1cKEFXpGQUAsm5KiSiEUhMxd9DiLkyI6ESRsq1GQmdEEKujwgoBZBxQ8Lzl0LIuCXh+Vs5f8RtAU9fy/kTKn6Zsyfc9z+9npiTB9we7+TFnD3fjng2E8yedOdu5uTxdqWzmlh2hrObVPaGO3M5ZqtcQWNOnO2AaLaTyBHRzluPyepX0hKTfWItDTHYh9bTDXN9bk2tOGksxb/CWB9dVx/OmerYWKfs6JShjk51xpLOmEnxb3DGTMeHOmFLJ4xUkel8NZ0vUU2m0/V0ukBFkU7X0+kClZDw75Cv5Fxpanh8jdpgzpSliGHxZjonilLE8HAhmvMkqWJ4shTMaYJUMTxdzOU0QapQ/JdZfDs1vVz0o2cN11s7/o2EYb6YT0yQZ+IvC2+1hvHeyRfHpu3ebmjbatqRkmNy4e/x4r/TSz//LP36ubs0+L6rQw8XxX+JybXfJ0tX+bPrQ09e36/iN37r7ealPqawV6TkmOzxvzv7r9gb8fMDwO2+v3bDs085hb0iJcfspf7yXPzSHj8urd/w7FNMXy8JCTJcf0xylf1Q/MIxflxav+XZp5S+XhMS5FfzrfjFY/zfh80fe9RLfUhfrwkJMhF/GWbH+NHo9CRg+rzr3288sR8mH2P6es1pgpThD2moDIs30zlRlDL8RQwsm08N+3KuNHWcTHu8+Ifjh+eqJ7ugJ9NnB6snux/Fbya6n6fDRyerJ7meF7MnR6snuR3F7yC4nZejB2erJ7ecNybPDVdPbjeK30VsN28NHpuuntRq3pw7NV49qc0ofiehzbw9dmi+ejKLWTF1ZsB6MntR/G4ie1k1dGTCehJrWTlzYsR6EltR/AEEtrJ65MCM9eSVsmHivJD15HWi+EOI62TTwHEp60mrZOO8aTHrSWtE8QcR1sjmccNy1pNVyI5ps4LWk9WH4g8jqo9dw0YlrSepjp2zJkWtJ6kNxR9IUBu7Rw3KWk9OGQdMmhO2npwuFH8oMV0cMmhM2npSqjhozpS49aQ0ofiDCWnisDFD8taTUcSBU2YEriejB8UfTkQPhw4ZkbiehBoOnjEhcj0JLSi+gIAWDh8xIHM9/UsomLB/6Hr6d6D4Enp3MGy+XNynVxpH6wJ+hjvWUslK8+gcf7i70XWlgTSOPyze7LjSRPqmn0121AtzyUojaZt9eLrYaaWZtM2u+FraZv832PXywAeu9HdlbcN/gLbZh/HDkebHr6b5MpK20evED76luzSOXrjHK/7SOLria2kbXfG1tI1+I96z+oNpm13xtbTN7vv4Wvpm93v1pTTO7k/nKumc3p/HF9I6vr+BU0fv+P7OXRn4AqgoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB7Kf7/92oK+QVpOAAAAAElFTkSuQmCC" alt="plot of chunk unnamed-chunk-4"/> 
+Problem Specific Knowledge</p>
+
+<pre><code class="r">#Identify a key class of words
+wikiWords2=wikiWords
+wikiWords2$HTTP=ifelse(grepl(&#39;http&#39;,wiki$Added,fixed=TRUE),1,0)
+table(wikiWords2$HTTP)
+</code></pre>
+
+<pre><code>## 
+##    0    1 
+## 3659  217
+</code></pre>
+
+<pre><code class="r">train2=subset(wikiWords2,spl==TRUE)
+test2=subset(wikiWords2,spl==FALSE)
+CARTfit2=rpart(Vandal~.,data=train2,method=&#39;class&#39;)
+testCART2=predict(CARTfit2,newdata=test2,type=&#39;class&#39;)
+table(testCART2,test2$Vandal)
+</code></pre>
+
+<pre><code>##          
+## testCART2   0   1
+##         0 613 472
+##         1   9  70
+</code></pre>
+
+<pre><code class="r">prp(CARTfit2)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-5"/> </p>
+
+<pre><code class="r">(70+613)/(70+613+9+472)
+</code></pre>
+
+<pre><code>## [1] 0.5867698
+</code></pre>
+
+<pre><code class="r"># counting words
+wikiWords2$NumWordsAdded=rowSums(as.matrix(dtmAdded))
+wikiWords2$NumWordsRemoved=rowSums(as.matrix(dtmRemoved))
+summary(wikiWords2$NumWordsAdded)
+</code></pre>
+
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    0.00    0.00    1.00    4.05    3.00  259.00
+</code></pre>
+
+<pre><code class="r">train3=subset(wikiWords2,spl==TRUE)
+test3=subset(wikiWords2,spl==FALSE)
+CARTfit3=rpart(Vandal~.,data=train3,method=&#39;class&#39;)
+testCART3=predict(CARTfit3,newdata=test3,type=&#39;class&#39;)
+table(testCART3,test3$Vandal)
+</code></pre>
+
+<pre><code>##          
+## testCART3   0   1
+##         0 515 292
+##         1 107 250
+</code></pre>
+
+<pre><code class="r">prp(CARTfit3)
+</code></pre>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAAH4CAMAAACR9g9NAAAABlBMVEUAAAD///+l2Z/dAAAACXBIWXMAAAsSAAALEgHS3X78AAALlElEQVR4nO2di3LiSBAEh///6Y3wWmgkBBZ0j+iayowNr8EGV1Wal713ajewpH07AHwHxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJtSSHw7YvPx5c3DBf9f+vDD/Tnt4NLrF9l/vb8TKVOnx/Gk3bk/oyeKb8uHf8/dX/aJ40nUl2nxLMij+PWv1p9aT/Rvu7OWU9219eIfhP6dSJkyLU6Jbxvxd/O7P3fD2++NXnx3/76K392PI/4Szoi/7dX2N/5j8Yv85Qr29+rbW/zjQ8EbSbUo0+Kc+PaJ+IO7+oNb/HLqjUTKlGlxSvztWPz9md3uPn1zP748R79f28HtHPHX037ftN7i7Yn4dlr87julV9uL765v+/HuyeLufHHKtPgV337eacufvfgDUTvxd1G/F1nv6vfil2vdPSBsEy3fjF2SMpOFKNNiFb88Infnfy9R9z2I+CH0M+/eKZAI8cNYNT97jP9aoj7OrdBkIcq02D2gb8//Cjyrv4TDZ143xI+iTIsj6T/nv3EVKZ/y1+c+CypGnRaHvwN9Z+Uzn/pW3XCiykxS43a2yTx9g0wzxNki0xQOMssO53vM0jjIJDMkPxUwYI4Z3nvONiqFFI4rOHZ+YIoR3i0xRekgM2zwdocZSkeZYIMPKkzQOor+BB810K8dRX6BDwvI946iPsDH+dWLRxHv/3l88eJhtPtH0ms3DyNdPxZeunoY5fbR7MrdwwiXD0cX7h5Ht3xCct3ycWS7pwSXbR9HtXpSbtX6cUSbZ8UWrZ+AZvO81Jr9E5AsnhlacoAEFHvnZlZcIAHB2smRBRfIQK92emK9CTKQaz0gsNwGGaiVHpJXbYQMxDoPiiu2QgZalUel1VohBcPKR/jNINV4YFipHTJQKjw0q9IQGQj1HRtVaIgUdPqOTqqzRAoydccHlZkiBZW2V+RU2SIFkbKXxBTZIgeNshel1BgjB4mul4WUWCMHhaoXZlSYIweBppdGFNgjh/pFr01Yf48kahed6X8eW4zSq/6GQ/0AKm/aHt6BNApv2g7fhRzqTrpJxr19NnUHbS9OQZiyg7aXJyFK2UH/B1sP/hu5qnY7frDYHJ/y8INLiOcvKtcPab30LJu0LW/aevLTq3o4bOz9A7dz4u8nDz/r4djkCpQNuxMfCbqI749L251aT2yOQ3t4UNqH2/TmOLZKlE2bK357aPm7+d2fM4ehvn937A9DrnVPbyL+tle7OSj1ofhF/u3hMX57rPHNLV7IfNmkyeLbJ+I3xxi/X9mTW/xySoSySVOf3N3299yd2Vv37G8vfr3c34/xtxviMxgjvp0Wf/wY/+xZfXe1IpRNurxEit/T7x62n4nv7tePntU/k9o/Ggh5ryueH9mOpe6g7ekJSKDwou3wXcih8qTrz0y+m2NKam/Kv7kbBqve8ZrCq+0rziwx0VoTVYlxboh55pqnSYyzO0yz1zRFgpzeYZbBZukR5I0ZJllskhpB3lphjsnmaBHkzRGm2GyKElHeHWGG0WboEOX9DSZYbYIKUT6ZQH82/QZRPltAfjf5AmE+XEB9OPX8YVwHcO298Hl/8eXE40cJ/RvOtBTfQDt9mFB96e2kw4cJtlceTzl7mHB54fWEo8eJl9edTzd5nIzusvvJBo+TU111QNXccbKaiy4oGjuBtOaaE2qmTiCxuOSGkqETSO2tOKJi5gRMa3eYLpBcW3BFwcgJpLfWm1EvcQIDSsvtKBc4gSGd1YZUy5vBmM5iS4rFzWBUZa0ptdJmMK6x1JZSYTMYWVhpTKWsKQwtLLSmUNQUBvfVmVMnaQrD68rsKRM0h/F1VQZVyZmDV9uXWE1xSVmRRUVipnBRV41JNVLmcFVXiU0lQuZwXVWFURUy5nBlU4FVBSLmcG3R+rPWTyiIwv9tvXg8SX43ra2+dDhN1kkrqy8cTZT25P1iFI6mSXtxqhJ1k4mCeFPay5N1KBvsFetrpfb5M6j1FVfmi6+2+avwvmWDvaL1R6R731nbXTTzyff+GsvuWzbYC5YDPN+PCr87JnB3hN/7mf2hvnfiU190/b9GbvFDWD1uDhB+O/hr+ezuEg93Fqk/ZuOufiB78UfG+8fvw1v39jwe4xU4IX69q79txD97eoB4Adr6O5Dn4u8PATvxB4/xy6mkdN3bW+F9ywZ7znJTvj0R/2h8d2feX/Txo9F03dvK89ZN9pRO/NM79/5Z/RO1/auAxCf2iHelPXm/GIWjqdI9phRet3A0WbrXDXUpHU6V3KeLYygeT5Xq2qcT/1edyeoGmGuJv9vM1TfAVEOcKTNV4QAz7XCuy0yNA0w0w9kqE1UOMM8Kp5vMUznCNCu8UWSazhEsR7AsvWOWDd7rMUvrAJNM8G6NSWoHmGOB91vM0TvAFAN8UmKK4gFm6P9ZhxmaB5ig/ocVJmgeQb/+xw30q0dwbu/cXb98pIB8+QDq3WP51dsHEK8ejS9eP4B283h67f4BpIsnhJfuH0G5eEp25QEiCPdOii68QATd2sn/fasbnq23WG4gWzozuOwIAVQ75+ZWXSGAaOXk2KIrRNCsnJ5ac4YIko0HhJbcIYJi4SGZFYeIINh3UGTBJSKY1X2F1xR6bccl1tsigFzZkYHlxgig1nVoXrUxIoh1HRxXbI0IWlWHp9WaI4JU0wvCSu0RQanoJVmVBokg1POiqEKLRDCp+Q4ek+i0vCypziQRZFpeGFRmkwgqJS/NqTJKBIWOLfXIcNW+3JcQKPgb8SoXF3+5b1G/Xjt4b54v9zXKt+tveRf/5K78NhGql2svTul/uS9Svdu1JtrLk1NRvdu1KvZXX32dANWr/eRbX11dI77tTs9I8WptebNXMvDL9ccaHvvlvknxat8Q37jFf5+v3OIR/30QP4ri1RA/iurV2g3xQ6heDfGDqF5t+zr+op/cXfRTg69SvRs/qx9E+W78dm4M9cvx+/ghCLTjX+CMQKEe/+ZuANMXhGMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJuCeFMQbwriTUG8KYg3BfGmIN4UxJvyDzkV2QWTYJ9dAAAAAElFTkSuQmCC" alt="plot of chunk unnamed-chunk-5"/> 
+Using non-textual data</p>
+
+<pre><code class="r">wikiWords3=wikiWords2
+wikiWords3$Minor=wiki$Minor
+wikiWords3$Loggedin=wiki$Loggedin
+train4=subset(wikiWords3,spl==TRUE)
+test4=subset(wikiWords3,spl==FALSE)
+CARTfit4=rpart(Vandal~.,data=train4,method=&#39;class&#39;)
+testCART4=predict(CARTfit4,newdata=test4,type=&#39;class&#39;)
+table(testCART4,test4$Vandal)
+</code></pre>
+
+<pre><code>##          
+## testCART4   0   1
+##         0 598 309
+##         1  24 233
+</code></pre>
+
+<pre><code class="r">prp(CARTfit4)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-6"/> </p>
+
+</body>
+
+</html>
+

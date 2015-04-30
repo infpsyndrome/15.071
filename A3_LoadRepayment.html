@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title></title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: rgb(88, 72, 246)
+   }
+
+   pre .number {
+     color: rgb(0, 0, 205);
+   }
+
+   pre .comment {
+     color: rgb(76, 136, 107);
+   }
+
+   pre .keyword {
+     color: rgb(0, 0, 255);
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: rgb(3, 106, 7);
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+</head>
+
+<body>
+<p>Prparing the dataset</p>
+
+<pre><code class="r">loans=read.csv(&#39;loans.csv&#39;)
+names(loans)
+</code></pre>
+
+<pre><code>##  [1] &quot;credit.policy&quot;     &quot;purpose&quot;           &quot;int.rate&quot;         
+##  [4] &quot;installment&quot;       &quot;log.annual.inc&quot;    &quot;dti&quot;              
+##  [7] &quot;fico&quot;              &quot;days.with.cr.line&quot; &quot;revol.bal&quot;        
+## [10] &quot;revol.util&quot;        &quot;inq.last.6mths&quot;    &quot;delinq.2yrs&quot;      
+## [13] &quot;pub.rec&quot;           &quot;not.fully.paid&quot;
+</code></pre>
+
+<pre><code class="r">table(loans$not.fully.paid)
+</code></pre>
+
+<pre><code>## 
+##    0    1 
+## 8045 1533
+</code></pre>
+
+<pre><code class="r">summary(loans)
+</code></pre>
+
+<pre><code>##  credit.policy                 purpose        int.rate     
+##  Min.   :0.000   all_other         :2331   Min.   :0.0600  
+##  1st Qu.:1.000   credit_card       :1262   1st Qu.:0.1039  
+##  Median :1.000   debt_consolidation:3957   Median :0.1221  
+##  Mean   :0.805   educational       : 343   Mean   :0.1226  
+##  3rd Qu.:1.000   home_improvement  : 629   3rd Qu.:0.1407  
+##  Max.   :1.000   major_purchase    : 437   Max.   :0.2164  
+##                  small_business    : 619                   
+##   installment     log.annual.inc        dti              fico      
+##  Min.   : 15.67   Min.   : 7.548   Min.   : 0.000   Min.   :612.0  
+##  1st Qu.:163.77   1st Qu.:10.558   1st Qu.: 7.213   1st Qu.:682.0  
+##  Median :268.95   Median :10.928   Median :12.665   Median :707.0  
+##  Mean   :319.09   Mean   :10.932   Mean   :12.607   Mean   :710.8  
+##  3rd Qu.:432.76   3rd Qu.:11.290   3rd Qu.:17.950   3rd Qu.:737.0  
+##  Max.   :940.14   Max.   :14.528   Max.   :29.960   Max.   :827.0  
+##                   NA&#39;s   :4                                        
+##  days.with.cr.line   revol.bal         revol.util     inq.last.6mths  
+##  Min.   :  179     Min.   :      0   Min.   :  0.00   Min.   : 0.000  
+##  1st Qu.: 2820     1st Qu.:   3187   1st Qu.: 22.70   1st Qu.: 0.000  
+##  Median : 4140     Median :   8596   Median : 46.40   Median : 1.000  
+##  Mean   : 4562     Mean   :  16914   Mean   : 46.87   Mean   : 1.572  
+##  3rd Qu.: 5730     3rd Qu.:  18250   3rd Qu.: 71.00   3rd Qu.: 2.000  
+##  Max.   :17640     Max.   :1207359   Max.   :119.00   Max.   :33.000  
+##  NA&#39;s   :29                          NA&#39;s   :62       NA&#39;s   :29      
+##   delinq.2yrs         pub.rec       not.fully.paid  
+##  Min.   : 0.0000   Min.   :0.0000   Min.   :0.0000  
+##  1st Qu.: 0.0000   1st Qu.:0.0000   1st Qu.:0.0000  
+##  Median : 0.0000   Median :0.0000   Median :0.0000  
+##  Mean   : 0.1638   Mean   :0.0621   Mean   :0.1601  
+##  3rd Qu.: 0.0000   3rd Qu.:0.0000   3rd Qu.:0.0000  
+##  Max.   :13.0000   Max.   :5.0000   Max.   :1.0000  
+##  NA&#39;s   :29        NA&#39;s   :29
+</code></pre>
+
+<pre><code class="r">table(loans$not.fully.paid,is.na(loans$pub.rec))
+</code></pre>
+
+<pre><code>##    
+##     FALSE TRUE
+##   0  8019   26
+##   1  1530    3
+</code></pre>
+
+<pre><code class="r">#fill the missing data
+install.packages(&#39;mice&#39;)
+</code></pre>
+
+<pre><code>## Installing package into &#39;C:/Users/WuY/Documents/R/win-library/3.1&#39;
+## (as &#39;lib&#39; is unspecified)
+</code></pre>
+
+<pre><code>## Error in contrib.url(repos, &quot;source&quot;): trying to use CRAN without setting a mirror
+</code></pre>
+
+<pre><code class="r">library(mice)
+</code></pre>
+
+<pre><code>## Warning: package &#39;mice&#39; was built under R version 3.1.3
+</code></pre>
+
+<pre><code>## Loading required package: Rcpp
+</code></pre>
+
+<pre><code>## Warning: package &#39;Rcpp&#39; was built under R version 3.1.3
+</code></pre>
+
+<pre><code>## Loading required package: lattice
+## mice 2.22 2014-06-10
+</code></pre>
+
+<pre><code class="r">set.seed(144)
+vars.for.imputation=setdiff(names(loans),&quot;not.fully.paid&quot;)
+imputed=complete(mice(loans[vars.for.imputation]))
+</code></pre>
+
+<pre><code>## 
+##  iter imp variable
+##   1   1  log.annual.inc  days.with.cr.line  revol.util  inq.last.6mths  delinq.2yrs  pub.rec
+##   1   2  log.annual.inc  days.with.cr.line  revol.util  inq.last.6mths  delinq.2yrs  pub.rec
+##   1   3  log.annual.inc  days.with.cr.line  revol.util  inq.last.6mths  delinq.2yrs  pub.rec
+##   1   4  log.annual.inc  days.with.cr.line  revol.util  inq.last.6mths  delinq.2yrs  pub.rec
+##   1   5  log.annual.inc  days.with.cr.line  revol.util  inq.last.6mths  delinq.2yrs  pub.rec
+##   2   1  log.annual.inc  days.with.cr.line  revol.util  inq.last.6mths  delinq.2yrs  pub.rec
+##   2   2  log.annual.inc  days.with.cr.line  revol.util  inq.last.6mths  delinq.2yrs  pub.rec
+##   2   3  log.annual.inc  days.with.cr.line  revol.util  inq.last.6mths  delinq.2yrs  pub.rec
+##   2   4  log.annual.inc  days.with.cr.line  revol.util  inq.last.6mths  delinq.2yrs  pub.rec
+##   2   5  log.annual.inc  days.with.cr.line  revol.util  inq.last.6mths  delinq.2yrs  pub.rec
+##   3   1  log.annual.inc  days.with.cr.line  revol.util  inq.last.6mths  delinq.2yrs  pub.rec
+##   3   2  log.annual.inc  days.with.cr.line  revol.util  inq.last.6mths  delinq.2yrs  pub.rec
+##   3   3  log.annual.inc  days.with.cr.line  revol.util  inq.last.6mths  delinq.2yrs  pub.rec
+##   3   4  log.annual.inc  days.with.cr.line  revol.util  inq.last.6mths  delinq.2yrs  pub.rec
+##   3   5  log.annual.inc  days.with.cr.line  revol.util  inq.last.6mths  delinq.2yrs  pub.rec
+##   4   1  log.annual.inc  days.with.cr.line  revol.util  inq.last.6mths  delinq.2yrs  pub.rec
+##   4   2  log.annual.inc  days.with.cr.line  revol.util  inq.last.6mths  delinq.2yrs  pub.rec
+##   4   3  log.annual.inc  days.with.cr.line  revol.util  inq.last.6mths  delinq.2yrs  pub.rec
+##   4   4  log.annual.inc  days.with.cr.line  revol.util  inq.last.6mths  delinq.2yrs  pub.rec
+##   4   5  log.annual.inc  days.with.cr.line  revol.util  inq.last.6mths  delinq.2yrs  pub.rec
+##   5   1  log.annual.inc  days.with.cr.line  revol.util  inq.last.6mths  delinq.2yrs  pub.rec
+##   5   2  log.annual.inc  days.with.cr.line  revol.util  inq.last.6mths  delinq.2yrs  pub.rec
+##   5   3  log.annual.inc  days.with.cr.line  revol.util  inq.last.6mths  delinq.2yrs  pub.rec
+##   5   4  log.annual.inc  days.with.cr.line  revol.util  inq.last.6mths  delinq.2yrs  pub.rec
+##   5   5  log.annual.inc  days.with.cr.line  revol.util  inq.last.6mths  delinq.2yrs  pub.rec
+</code></pre>
+
+<pre><code class="r">loans[vars.for.imputation]=imputed
+summary(loans)
+</code></pre>
+
+<pre><code>##  credit.policy                 purpose        int.rate     
+##  Min.   :0.000   all_other         :2331   Min.   :0.0600  
+##  1st Qu.:1.000   credit_card       :1262   1st Qu.:0.1039  
+##  Median :1.000   debt_consolidation:3957   Median :0.1221  
+##  Mean   :0.805   educational       : 343   Mean   :0.1226  
+##  3rd Qu.:1.000   home_improvement  : 629   3rd Qu.:0.1407  
+##  Max.   :1.000   major_purchase    : 437   Max.   :0.2164  
+##                  small_business    : 619                   
+##   installment     log.annual.inc        dti              fico      
+##  Min.   : 15.67   Min.   : 7.548   Min.   : 0.000   Min.   :612.0  
+##  1st Qu.:163.77   1st Qu.:10.558   1st Qu.: 7.213   1st Qu.:682.0  
+##  Median :268.95   Median :10.928   Median :12.665   Median :707.0  
+##  Mean   :319.09   Mean   :10.932   Mean   :12.607   Mean   :710.8  
+##  3rd Qu.:432.76   3rd Qu.:11.290   3rd Qu.:17.950   3rd Qu.:737.0  
+##  Max.   :940.14   Max.   :14.528   Max.   :29.960   Max.   :827.0  
+##                                                                    
+##  days.with.cr.line   revol.bal         revol.util     inq.last.6mths  
+##  Min.   :  179     Min.   :      0   Min.   :  0.00   Min.   : 0.000  
+##  1st Qu.: 2820     1st Qu.:   3187   1st Qu.: 22.60   1st Qu.: 0.000  
+##  Median : 4140     Median :   8596   Median : 46.25   Median : 1.000  
+##  Mean   : 4560     Mean   :  16914   Mean   : 46.80   Mean   : 1.582  
+##  3rd Qu.: 5730     3rd Qu.:  18250   3rd Qu.: 70.90   3rd Qu.: 2.000  
+##  Max.   :17640     Max.   :1207359   Max.   :119.00   Max.   :33.000  
+##                                                                       
+##   delinq.2yrs         pub.rec        not.fully.paid  
+##  Min.   : 0.0000   Min.   :0.00000   Min.   :0.0000  
+##  1st Qu.: 0.0000   1st Qu.:0.00000   1st Qu.:0.0000  
+##  Median : 0.0000   Median :0.00000   Median :0.0000  
+##  Mean   : 0.1635   Mean   :0.06223   Mean   :0.1601  
+##  3rd Qu.: 0.0000   3rd Qu.:0.00000   3rd Qu.:0.0000  
+##  Max.   :13.0000   Max.   :5.00000   Max.   :1.0000  
+## 
+</code></pre>
+
+<pre><code class="r">#we can see now the gaps are all filled
+</code></pre>
+
+<p>Prediction models</p>
+
+<pre><code class="r">library(caTools)
+</code></pre>
+
+<pre><code>## Warning: package &#39;caTools&#39; was built under R version 3.1.3
+</code></pre>
+
+<pre><code class="r">set.seed(144)
+split=sample.split(loans$not.fully.paid,SplitRatio=0.7)
+train=subset(loans,split==TRUE)
+test=subset(loans,split==FALSE)
+logfit1=glm(not.fully.paid~.,data=train,family=&#39;binomial&#39;)
+summary(logfit1)
+</code></pre>
+
+<pre><code>## 
+## Call:
+## glm(formula = not.fully.paid ~ ., family = &quot;binomial&quot;, data = train)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -2.2097  -0.6214  -0.4950  -0.3601   2.6414  
+## 
+## Coefficients:
+##                     Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)        9.260e+00  1.554e+00   5.958 2.55e-09 ***
+## credit.policy     -3.327e-01  1.011e-01  -3.292 0.000995 ***
+## purpose2          -6.100e-01  1.344e-01  -4.538 5.67e-06 ***
+## purpose3          -3.181e-01  9.185e-02  -3.463 0.000534 ***
+## purpose4           1.386e-01  1.753e-01   0.791 0.429074    
+## purpose5           1.774e-01  1.479e-01   1.199 0.230496    
+## purpose6          -4.783e-01  2.009e-01  -2.381 0.017260 *  
+## purpose7           4.159e-01  1.419e-01   2.932 0.003373 ** 
+## int.rate           6.202e-01  2.085e+00   0.297 0.766111    
+## installment        1.279e-03  2.093e-04   6.110 9.96e-10 ***
+## log.annual.inc    -4.357e-01  7.151e-02  -6.093 1.11e-09 ***
+## dti                4.733e-03  5.501e-03   0.861 0.389508    
+## fico              -9.406e-03  1.707e-03  -5.510 3.60e-08 ***
+## days.with.cr.line  3.174e-06  1.587e-05   0.200 0.841463    
+## revol.bal          3.103e-06  1.169e-06   2.653 0.007966 ** 
+## revol.util         1.796e-03  1.532e-03   1.172 0.241022    
+## inq.last.6mths     8.386e-02  1.577e-02   5.317 1.06e-07 ***
+## delinq.2yrs       -7.794e-02  6.532e-02  -1.193 0.232814    
+## pub.rec            3.191e-01  1.134e-01   2.814 0.004899 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 5896.6  on 6704  degrees of freedom
+## Residual deviance: 5485.7  on 6686  degrees of freedom
+## AIC: 5523.7
+## 
+## Number of Fisher Scoring iterations: 5
+</code></pre>
+
+<pre><code class="r">#my dataset seems to be different from the imputed
+loans_imputed=read.csv(&#39;loans_imputed.csv&#39;)
+identical(loans,loans_imputed)
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+<pre><code class="r">all.equal(loans,loans_imputed)
+</code></pre>
+
+<pre><code>##  [1] &quot;Component \&quot;purpose\&quot;: Attributes: &lt; Names: 1 string mismatch &gt;&quot;                                         
+##  [2] &quot;Component \&quot;purpose\&quot;: Attributes: &lt; Length mismatch: comparison on first 2 components &gt;&quot;                
+##  [3] &quot;Component \&quot;purpose\&quot;: Attributes: &lt; Component 2: Modes: numeric, character &gt;&quot;                           
+##  [4] &quot;Component \&quot;purpose\&quot;: Attributes: &lt; Component 2: Lengths: 42, 7 &gt;&quot;                                      
+##  [5] &quot;Component \&quot;purpose\&quot;: Attributes: &lt; Component 2: Attributes: &lt; Modes: list, NULL &gt; &gt;&quot;                   
+##  [6] &quot;Component \&quot;purpose\&quot;: Attributes: &lt; Component 2: Attributes: &lt; Lengths: 2, 0 &gt; &gt;&quot;                       
+##  [7] &quot;Component \&quot;purpose\&quot;: Attributes: &lt; Component 2: Attributes: &lt; names for target but not for current &gt; &gt;&quot;
+##  [8] &quot;Component \&quot;purpose\&quot;: Attributes: &lt; Component 2: Attributes: &lt; current is not list-like &gt; &gt;&quot;            
+##  [9] &quot;Component \&quot;purpose\&quot;: Attributes: &lt; Component 2: target is matrix, current is character &gt;&quot;              
+## [10] &quot;Component \&quot;log.annual.inc\&quot;: Mean relative difference: 0.06846164&quot;                                      
+## [11] &quot;Component \&quot;days.with.cr.line\&quot;: Mean relative difference: 0.5120913&quot;                                    
+## [12] &quot;Component \&quot;revol.util\&quot;: Mean relative difference: 0.5452947&quot;                                           
+## [13] &quot;Component \&quot;inq.last.6mths\&quot;: Mean relative difference: 0.7322835&quot;                                       
+## [14] &quot;Component \&quot;delinq.2yrs\&quot;: Mean relative difference: 3&quot;                                                  
+## [15] &quot;Component \&quot;pub.rec\&quot;: Mean relative difference: 1.666667&quot;
+</code></pre>
+
+<pre><code class="r">loans=loans_imputed
+#rebuild the model with the corrected loans dataset
+set.seed(144)
+split=sample.split(loans$not.fully.paid,SplitRatio=0.7)
+train=subset(loans,split==TRUE)
+test=subset(loans,split==FALSE)
+logfit1=glm(not.fully.paid~.,data=train,family=&#39;binomial&#39;)
+summary(logfit1)
+</code></pre>
+
+<pre><code>## 
+## Call:
+## glm(formula = not.fully.paid ~ ., family = &quot;binomial&quot;, data = train)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -2.2049  -0.6205  -0.4951  -0.3606   2.6397  
+## 
+## Coefficients:
+##                             Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)                9.187e+00  1.554e+00   5.910 3.42e-09 ***
+## credit.policy             -3.368e-01  1.011e-01  -3.332 0.000861 ***
+## purposecredit_card        -6.141e-01  1.344e-01  -4.568 4.93e-06 ***
+## purposedebt_consolidation -3.212e-01  9.183e-02  -3.498 0.000469 ***
+## purposeeducational         1.347e-01  1.753e-01   0.768 0.442201    
+## purposehome_improvement    1.727e-01  1.480e-01   1.167 0.243135    
+## purposemajor_purchase     -4.830e-01  2.009e-01  -2.404 0.016203 *  
+## purposesmall_business      4.120e-01  1.419e-01   2.905 0.003678 ** 
+## int.rate                   6.110e-01  2.085e+00   0.293 0.769446    
+## installment                1.275e-03  2.092e-04   6.093 1.11e-09 ***
+## log.annual.inc            -4.337e-01  7.148e-02  -6.067 1.30e-09 ***
+## dti                        4.638e-03  5.502e-03   0.843 0.399288    
+## fico                      -9.317e-03  1.710e-03  -5.448 5.08e-08 ***
+## days.with.cr.line          2.371e-06  1.588e-05   0.149 0.881343    
+## revol.bal                  3.085e-06  1.168e-06   2.641 0.008273 ** 
+## revol.util                 1.839e-03  1.535e-03   1.199 0.230722    
+## inq.last.6mths             8.437e-02  1.600e-02   5.275 1.33e-07 ***
+## delinq.2yrs               -8.320e-02  6.561e-02  -1.268 0.204762    
+## pub.rec                    3.300e-01  1.139e-01   2.898 0.003756 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 5896.6  on 6704  degrees of freedom
+## Residual deviance: 5485.2  on 6686  degrees of freedom
+## AIC: 5523.2
+## 
+## Number of Fisher Scoring iterations: 5
+</code></pre>
+
+<pre><code class="r">exp(0.09317)
+</code></pre>
+
+<pre><code>## [1] 1.097648
+</code></pre>
+
+<pre><code class="r">#predict the probability of the test set loans not being paid back in full
+test$predicted.risk=predict(logfit1,newdata=test,type=&#39;response&#39;)
+table(test$not.fully.paid,test$predicted.risk&gt;=0.5)
+</code></pre>
+
+<pre><code>##    
+##     FALSE TRUE
+##   0  2400   13
+##   1   457    3
+</code></pre>
+
+<pre><code class="r">require(&#39;ROCR&#39;)
+</code></pre>
+
+<pre><code>## Loading required package: ROCR
+</code></pre>
+
+<pre><code>## Warning: package &#39;ROCR&#39; was built under R version 3.1.3
+</code></pre>
+
+<pre><code>## Loading required package: gplots
+</code></pre>
+
+<pre><code>## Warning: package &#39;gplots&#39; was built under R version 3.1.3
+</code></pre>
+
+<pre><code>## KernSmooth 2.23 loaded
+## Copyright M. P. Wand 1997-2009
+## 
+## Attaching package: &#39;gplots&#39;
+## 
+## The following object is masked from &#39;package:stats&#39;:
+## 
+##     lowess
+</code></pre>
+
+<pre><code class="r">pred=prediction(pred,test$not.fully.paid)
+</code></pre>
+
+<pre><code>## Error in is.data.frame(predictions): object &#39;pred&#39; not found
+</code></pre>
+
+<pre><code class="r">as.numeric(performance(pred,&#39;auc&#39;)@y.values)
+</code></pre>
+
+<pre><code>## Error in performance(pred, &quot;auc&quot;): object &#39;pred&#39; not found
+</code></pre>
+
+<pre><code class="r"># the AUC is only slightly better than random guess (0.5)
+</code></pre>
+
+<p>A &ldquo;smart baseline&rdquo;</p>
+
+<pre><code class="r">names(loans)
+</code></pre>
+
+<pre><code>##  [1] &quot;credit.policy&quot;     &quot;purpose&quot;           &quot;int.rate&quot;         
+##  [4] &quot;installment&quot;       &quot;log.annual.inc&quot;    &quot;dti&quot;              
+##  [7] &quot;fico&quot;              &quot;days.with.cr.line&quot; &quot;revol.bal&quot;        
+## [10] &quot;revol.util&quot;        &quot;inq.last.6mths&quot;    &quot;delinq.2yrs&quot;      
+## [13] &quot;pub.rec&quot;           &quot;not.fully.paid&quot;
+</code></pre>
+
+<pre><code class="r">logfit2=glm(not.fully.paid~int.rate,data=loans,family=&#39;binomial&#39;)
+summary(logfit2)
+</code></pre>
+
+<pre><code>## 
+## Call:
+## glm(formula = not.fully.paid ~ int.rate, family = &quot;binomial&quot;, 
+##     data = loans)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -1.0677  -0.6280  -0.5418  -0.4329   2.3001  
+## 
+## Coefficients:
+##             Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)  -3.7208     0.1411  -26.37   &lt;2e-16 ***
+## int.rate     16.3003     1.0609   15.36   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 8424.0  on 9577  degrees of freedom
+## Residual deviance: 8180.6  on 9576  degrees of freedom
+## AIC: 8184.6
+## 
+## Number of Fisher Scoring iterations: 4
+</code></pre>
+
+<pre><code class="r">pred2=predict(logfit2,newdata=test,type=&#39;response&#39;)
+summary(pred2)
+</code></pre>
+
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  0.0605  0.1145  0.1505  0.1598  0.1900  0.4345
+</code></pre>
+
+<pre><code class="r">table(pred2&gt;0.5)
+</code></pre>
+
+<pre><code>## 
+## FALSE 
+##  2873
+</code></pre>
+
+<pre><code class="r">pred2=prediction(pred2,test$not.fully.paid)
+as.numeric(performance(pred2,&#39;auc&#39;)@y.values)
+</code></pre>
+
+<pre><code>## [1] 0.6239081
+</code></pre>
+
+<p>Computing the profitability of an investment</p>
+
+<pre><code class="r">#profit=investment*(exp(rate*year))-investment
+test$profit=exp(test$int.rate*3)-1
+test$profit[test$not.fully.paid==1]=-1
+max(test$profit)
+</code></pre>
+
+<pre><code>## [1] 0.8894769
+</code></pre>
+
+<p>Investment strategy based on risk
+purchace loans with a high interest rate (&gt;=15%) which as have the  lowest predicted risk of not bing pail back in full </p>
+
+<pre><code class="r">highint=subset(test,int.rate&gt;=0.15)
+summary(highint$profit)
+</code></pre>
+
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+## -1.0000 -1.0000  0.5992  0.2251  0.6380  0.8895
+</code></pre>
+
+<pre><code class="r">table(highint$not.fully.paid)
+</code></pre>
+
+<pre><code>## 
+##   0   1 
+## 327 110
+</code></pre>
+
+<pre><code class="r">110/(327+110)
+</code></pre>
+
+<pre><code>## [1] 0.2517162
+</code></pre>
+
+<pre><code class="r">#find the hightest predicted risk that we will include
+cutoff=sort(highint$predicted.risk,decreasing=FALSE)[100]
+cutoff
+</code></pre>
+
+<pre><code>## [1] 0.1763305
+</code></pre>
+
+<pre><code class="r">selectedLoans=subset(highint,predicted.risk&lt;=cutoff)
+summary(selectedLoans)
+</code></pre>
+
+<pre><code>##  credit.policy                purpose      int.rate       installment    
+##  Min.   :0.00   all_other         : 8   Min.   :0.1501   Min.   : 48.79  
+##  1st Qu.:1.00   credit_card       :17   1st Qu.:0.1533   1st Qu.:176.16  
+##  Median :1.00   debt_consolidation:60   Median :0.1570   Median :309.37  
+##  Mean   :0.93   educational       : 1   Mean   :0.1610   Mean   :358.30  
+##  3rd Qu.:1.00   home_improvement  : 1   3rd Qu.:0.1645   3rd Qu.:473.10  
+##  Max.   :1.00   major_purchase    : 7   Max.   :0.2052   Max.   :907.60  
+##                 small_business    : 6                                    
+##  log.annual.inc        dti             fico       days.with.cr.line
+##  Min.   : 9.575   Min.   : 0.00   Min.   :642.0   Min.   : 1140    
+##  1st Qu.:10.776   1st Qu.: 6.05   1st Qu.:662.0   1st Qu.: 2162    
+##  Median :11.127   Median :12.35   Median :672.0   Median : 3630    
+##  Mean   :11.203   Mean   :12.19   Mean   :680.5   Mean   : 3911    
+##  3rd Qu.:11.670   3rd Qu.:18.23   3rd Qu.:692.0   3rd Qu.: 5010    
+##  Max.   :13.305   Max.   :28.15   Max.   :782.0   Max.   :13170    
+##                                                                    
+##    revol.bal        revol.util    inq.last.6mths   delinq.2yrs  
+##  Min.   :     0   Min.   : 0.00   Min.   : 0.00   Min.   :0.00  
+##  1st Qu.:  3768   1st Qu.:45.92   1st Qu.: 0.00   1st Qu.:0.00  
+##  Median :  9691   Median :71.65   Median : 0.00   Median :0.00  
+##  Mean   : 19923   Mean   :65.79   Mean   : 0.89   Mean   :0.33  
+##  3rd Qu.: 24534   3rd Qu.:93.80   3rd Qu.: 1.00   3rd Qu.:0.00  
+##  Max.   :168496   Max.   :99.70   Max.   :10.00   Max.   :4.00  
+##                                                                 
+##     pub.rec     not.fully.paid predicted.risk        profit       
+##  Min.   :0.00   Min.   :0.00   Min.   :0.06871   Min.   :-1.0000  
+##  1st Qu.:0.00   1st Qu.:0.00   1st Qu.:0.13596   1st Qu.: 0.5823  
+##  Median :0.00   Median :0.00   Median :0.15327   Median : 0.5992  
+##  Mean   :0.03   Mean   :0.19   Mean   :0.14794   Mean   : 0.3128  
+##  3rd Qu.:0.00   3rd Qu.:0.00   3rd Qu.:0.16514   3rd Qu.: 0.6317  
+##  Max.   :1.00   Max.   :1.00   Max.   :0.17633   Max.   : 0.8508  
+## 
+</code></pre>
+
+<pre><code class="r">sum(selectedLoans$profit)
+</code></pre>
+
+<pre><code>## [1] 31.27825
+</code></pre>
+
+<pre><code class="r">table(selectedLoans$not.fully.paid)
+</code></pre>
+
+<pre><code>## 
+##  0  1 
+## 81 19
+</code></pre>
+
+</body>
+
+</html>
+

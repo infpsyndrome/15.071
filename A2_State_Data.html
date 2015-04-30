@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title></title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: rgb(88, 72, 246)
+   }
+
+   pre .number {
+     color: rgb(0, 0, 205);
+   }
+
+   pre .comment {
+     color: rgb(76, 136, 107);
+   }
+
+   pre .keyword {
+     color: rgb(0, 0, 255);
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: rgb(3, 106, 7);
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+</head>
+
+<body>
+<p>prepare the data</p>
+
+<pre><code class="r">statedata=read.csv(&#39;statedata.csv&#39;)
+head(statedata)
+</code></pre>
+
+<pre><code>##   Population Income Illiteracy Life.Exp Murder HS.Grad Frost   Area
+## 1       3615   3624        2.1    69.05   15.1    41.3    20  50708
+## 2        365   6315        1.5    69.31   11.3    66.7   152 566432
+## 3       2212   4530        1.8    70.55    7.8    58.1    15 113417
+## 4       2110   3378        1.9    70.66   10.1    39.9    65  51945
+## 5      21198   5114        1.1    71.71   10.3    62.6    20 156361
+## 6       2541   4884        0.7    72.06    6.8    63.9   166 103766
+##   state.abb state.area         x       y     state.division state.name
+## 1        AL      51609  -86.7509 32.5901 East South Central    Alabama
+## 2        AK     589757 -127.2500 49.2500            Pacific     Alaska
+## 3        AZ     113909 -111.6250 34.2192           Mountain    Arizona
+## 4        AR      53104  -92.2992 34.7336 West South Central   Arkansas
+## 5        CA     158693 -119.7730 36.5341            Pacific California
+## 6        CO     104247 -105.5130 38.6777           Mountain   Colorado
+##   state.region
+## 1        South
+## 2         West
+## 3         West
+## 4        South
+## 5         West
+## 6         West
+</code></pre>
+
+<pre><code class="r">names(statedata)
+</code></pre>
+
+<pre><code>##  [1] &quot;Population&quot;     &quot;Income&quot;         &quot;Illiteracy&quot;     &quot;Life.Exp&quot;      
+##  [5] &quot;Murder&quot;         &quot;HS.Grad&quot;        &quot;Frost&quot;          &quot;Area&quot;          
+##  [9] &quot;state.abb&quot;      &quot;state.area&quot;     &quot;x&quot;              &quot;y&quot;             
+## [13] &quot;state.division&quot; &quot;state.name&quot;     &quot;state.region&quot;
+</code></pre>
+
+<pre><code class="r">data(state)
+head(state.x77)
+</code></pre>
+
+<pre><code>##            Population Income Illiteracy Life Exp Murder HS Grad Frost
+## Alabama          3615   3624        2.1    69.05   15.1    41.3    20
+## Alaska            365   6315        1.5    69.31   11.3    66.7   152
+## Arizona          2212   4530        1.8    70.55    7.8    58.1    15
+## Arkansas         2110   3378        1.9    70.66   10.1    39.9    65
+## California      21198   5114        1.1    71.71   10.3    62.6    20
+## Colorado         2541   4884        0.7    72.06    6.8    63.9   166
+##              Area
+## Alabama     50708
+## Alaska     566432
+## Arizona    113417
+## Arkansas    51945
+## California 156361
+## Colorado   103766
+</code></pre>
+
+<pre><code class="r">statedata=cbind(data.frame(state.x77),state.abb,state.area,state.center,state.division,state.name,state.region)  
+str(statedata)
+</code></pre>
+
+<pre><code>## &#39;data.frame&#39;:    50 obs. of  15 variables:
+##  $ Population    : num  3615 365 2212 2110 21198 ...
+##  $ Income        : num  3624 6315 4530 3378 5114 ...
+##  $ Illiteracy    : num  2.1 1.5 1.8 1.9 1.1 0.7 1.1 0.9 1.3 2 ...
+##  $ Life.Exp      : num  69 69.3 70.5 70.7 71.7 ...
+##  $ Murder        : num  15.1 11.3 7.8 10.1 10.3 6.8 3.1 6.2 10.7 13.9 ...
+##  $ HS.Grad       : num  41.3 66.7 58.1 39.9 62.6 63.9 56 54.6 52.6 40.6 ...
+##  $ Frost         : num  20 152 15 65 20 166 139 103 11 60 ...
+##  $ Area          : num  50708 566432 113417 51945 156361 ...
+##  $ state.abb     : Factor w/ 50 levels &quot;AK&quot;,&quot;AL&quot;,&quot;AR&quot;,..: 2 1 4 3 5 6 7 8 9 10 ...
+##  $ state.area    : num  51609 589757 113909 53104 158693 ...
+##  $ x             : num  -86.8 -127.2 -111.6 -92.3 -119.8 ...
+##  $ y             : num  32.6 49.2 34.2 34.7 36.5 ...
+##  $ state.division: Factor w/ 9 levels &quot;New England&quot;,..: 4 9 8 5 9 8 1 3 3 3 ...
+##  $ state.name    : Factor w/ 50 levels &quot;Alabama&quot;,&quot;Alaska&quot;,..: 1 2 3 4 5 6 7 8 9 10 ...
+##  $ state.region  : Factor w/ 4 levels &quot;Northeast&quot;,&quot;South&quot;,..: 2 4 4 2 4 4 1 2 2 2 ...
+</code></pre>
+
+<pre><code class="r">plot(statedata$x,statedata$y)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-1"/> </p>
+
+<pre><code class="r">#find the state with the highest average high school graudation rate 
+sort(tapply(statedata$HS.Grad,statedata$state.region,mean))
+</code></pre>
+
+<pre><code>##         South     Northeast North Central          West 
+##      44.34375      53.96667      54.51667      62.00000
+</code></pre>
+
+<pre><code class="r">names(statedata)
+</code></pre>
+
+<pre><code>##  [1] &quot;Population&quot;     &quot;Income&quot;         &quot;Illiteracy&quot;     &quot;Life.Exp&quot;      
+##  [5] &quot;Murder&quot;         &quot;HS.Grad&quot;        &quot;Frost&quot;          &quot;Area&quot;          
+##  [9] &quot;state.abb&quot;      &quot;state.area&quot;     &quot;x&quot;              &quot;y&quot;             
+## [13] &quot;state.division&quot; &quot;state.name&quot;     &quot;state.region&quot;
+</code></pre>
+
+<pre><code class="r">#make a boxplot of the murder rate by region
+boxplot(statedata$Murder~statedata$state.region)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-1"/> </p>
+
+<pre><code class="r">#find out the outlier of the Northeast region
+Northeast=subset(statedata,state.region==&#39;Northeast&#39;)
+which(Northeast$Murder==max(Northeast$Murder))
+</code></pre>
+
+<pre><code>## [1] 6
+</code></pre>
+
+<pre><code class="r">Northeast$state.name[6]
+</code></pre>
+
+<pre><code>## [1] New York
+## 50 Levels: Alabama Alaska Arizona Arkansas California ... Wyoming
+</code></pre>
+
+<p>Predicting life expectancy</p>
+
+<pre><code class="r">lmfit1=lm(Life.Exp~Population+Income+Illiteracy+Murder+HS.Grad+Frost+Area,data=statedata)
+summary(lmfit1)
+</code></pre>
+
+<pre><code>## 
+## Call:
+## lm(formula = Life.Exp ~ Population + Income + Illiteracy + Murder + 
+##     HS.Grad + Frost + Area, data = statedata)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.48895 -0.51232 -0.02747  0.57002  1.49447 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  7.094e+01  1.748e+00  40.586  &lt; 2e-16 ***
+## Population   5.180e-05  2.919e-05   1.775   0.0832 .  
+## Income      -2.180e-05  2.444e-04  -0.089   0.9293    
+## Illiteracy   3.382e-02  3.663e-01   0.092   0.9269    
+## Murder      -3.011e-01  4.662e-02  -6.459 8.68e-08 ***
+## HS.Grad      4.893e-02  2.332e-02   2.098   0.0420 *  
+## Frost       -5.735e-03  3.143e-03  -1.825   0.0752 .  
+## Area        -7.383e-08  1.668e-06  -0.044   0.9649    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.7448 on 42 degrees of freedom
+## Multiple R-squared:  0.7362, Adjusted R-squared:  0.6922 
+## F-statistic: 16.74 on 7 and 42 DF,  p-value: 2.534e-10
+</code></pre>
+
+<pre><code class="r">plot(statedata$Income,statedata$Life.Exp)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-2"/> </p>
+
+<pre><code class="r"># we see that the correlation between life expectation and income is positive, which is controdictive to the model coefficient of income. 
+</code></pre>
+
+<p>Refine the model </p>
+
+<pre><code class="r">#remove from the original model the variables with the largest p-value or the t value closest to zero
+lmfit2=step(lmfit1,direction=&#39;backward&#39;)
+</code></pre>
+
+<pre><code>## Start:  AIC=-22.18
+## Life.Exp ~ Population + Income + Illiteracy + Murder + HS.Grad + 
+##     Frost + Area
+## 
+##              Df Sum of Sq    RSS     AIC
+## - Area        1    0.0011 23.298 -24.182
+## - Income      1    0.0044 23.302 -24.175
+## - Illiteracy  1    0.0047 23.302 -24.174
+## &lt;none&gt;                    23.297 -22.185
+## - Population  1    1.7472 25.044 -20.569
+## - Frost       1    1.8466 25.144 -20.371
+## - HS.Grad     1    2.4413 25.738 -19.202
+## - Murder      1   23.1411 46.438  10.305
+## 
+## Step:  AIC=-24.18
+## Life.Exp ~ Population + Income + Illiteracy + Murder + HS.Grad + 
+##     Frost
+## 
+##              Df Sum of Sq    RSS     AIC
+## - Illiteracy  1    0.0038 23.302 -26.174
+## - Income      1    0.0059 23.304 -26.170
+## &lt;none&gt;                    23.298 -24.182
+## - Population  1    1.7599 25.058 -22.541
+## - Frost       1    2.0488 25.347 -21.968
+## - HS.Grad     1    2.9804 26.279 -20.163
+## - Murder      1   26.2721 49.570  11.569
+## 
+## Step:  AIC=-26.17
+## Life.Exp ~ Population + Income + Murder + HS.Grad + Frost
+## 
+##              Df Sum of Sq    RSS     AIC
+## - Income      1     0.006 23.308 -28.161
+## &lt;none&gt;                    23.302 -26.174
+## - Population  1     1.887 25.189 -24.280
+## - Frost       1     3.037 26.339 -22.048
+## - HS.Grad     1     3.495 26.797 -21.187
+## - Murder      1    34.739 58.041  17.456
+## 
+## Step:  AIC=-28.16
+## Life.Exp ~ Population + Murder + HS.Grad + Frost
+## 
+##              Df Sum of Sq    RSS     AIC
+## &lt;none&gt;                    23.308 -28.161
+## - Population  1     2.064 25.372 -25.920
+## - Frost       1     3.122 26.430 -23.877
+## - HS.Grad     1     5.112 28.420 -20.246
+## - Murder      1    34.816 58.124  15.528
+</code></pre>
+
+<pre><code class="r">summary(lmfit2)
+</code></pre>
+
+<pre><code>## 
+## Call:
+## lm(formula = Life.Exp ~ Population + Murder + HS.Grad + Frost, 
+##     data = statedata)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.47095 -0.53464 -0.03701  0.57621  1.50683 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  7.103e+01  9.529e-01  74.542  &lt; 2e-16 ***
+## Population   5.014e-05  2.512e-05   1.996  0.05201 .  
+## Murder      -3.001e-01  3.661e-02  -8.199 1.77e-10 ***
+## HS.Grad      4.658e-02  1.483e-02   3.142  0.00297 ** 
+## Frost       -5.943e-03  2.421e-03  -2.455  0.01802 *  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.7197 on 45 degrees of freedom
+## Multiple R-squared:  0.736,  Adjusted R-squared:  0.7126 
+## F-statistic: 31.37 on 4 and 45 DF,  p-value: 1.696e-12
+</code></pre>
+
+<pre><code class="r">summary(lmfit1)
+</code></pre>
+
+<pre><code>## 
+## Call:
+## lm(formula = Life.Exp ~ Population + Income + Illiteracy + Murder + 
+##     HS.Grad + Frost + Area, data = statedata)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.48895 -0.51232 -0.02747  0.57002  1.49447 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  7.094e+01  1.748e+00  40.586  &lt; 2e-16 ***
+## Population   5.180e-05  2.919e-05   1.775   0.0832 .  
+## Income      -2.180e-05  2.444e-04  -0.089   0.9293    
+## Illiteracy   3.382e-02  3.663e-01   0.092   0.9269    
+## Murder      -3.011e-01  4.662e-02  -6.459 8.68e-08 ***
+## HS.Grad      4.893e-02  2.332e-02   2.098   0.0420 *  
+## Frost       -5.735e-03  3.143e-03  -1.825   0.0752 .  
+## Area        -7.383e-08  1.668e-06  -0.044   0.9649    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.7448 on 42 degrees of freedom
+## Multiple R-squared:  0.7362, Adjusted R-squared:  0.6922 
+## F-statistic: 16.74 on 7 and 42 DF,  p-value: 2.534e-10
+</code></pre>
+
+<pre><code class="r">predtrain=predict(lmfit2,data=train)
+sort(predtrain,decreasing=TRUE)
+</code></pre>
+
+<pre><code>##     Washington  Massachusetts         Oregon           Iowa      Minnesota 
+##       72.68272       72.44105       72.41445       72.39653       72.26560 
+##       Nebraska         Hawaii           Utah    Connecticut   South Dakota 
+##       72.17032       72.09317       72.05753       72.03459       72.01161 
+##      Wisconsin         Kansas   North Dakota          Maine     California 
+##       72.00996       71.90352       71.87649       71.86095       71.79565 
+##   Rhode Island  New Hampshire     New Jersey          Idaho        Arizona 
+##       71.76007       71.72636       71.59612       71.49989       71.41416 
+##        Montana   Pennsylvania       Oklahoma       Delaware       Colorado 
+##       71.40025       71.38046       71.15860       71.12647       71.10354 
+##           Ohio        Vermont        Indiana        Wyoming       New York 
+##       71.08549       71.06135       70.90159       70.87679       70.62937 
+##        Florida       Maryland  West Virginia       Illinois       Virginia 
+##       70.61539       70.51852       70.44983       70.19244       70.14691 
+##       Missouri     New Mexico          Texas       Michigan         Alaska 
+##       70.10610       70.03119       69.97886       69.86893       69.85740 
+##       Arkansas         Nevada      Tennessee North Carolina       Kentucky 
+##       69.57374       69.52482       69.46583       69.28624       69.24418 
+##      Louisiana South Carolina    Mississippi        Georgia        Alabama 
+##       69.15045       69.06109       69.00535       68.63694       68.48112
+</code></pre>
+
+<pre><code class="r">which.min(statedata$Life.Exp)
+</code></pre>
+
+<pre><code>## [1] 40
+</code></pre>
+
+<pre><code class="r">statedata$state.name[40]
+</code></pre>
+
+<pre><code>## [1] South Carolina
+## 50 Levels: Alabama Alaska Arizona Arkansas California ... Wyoming
+</code></pre>
+
+<pre><code class="r">which.max(statedata$Life.Exp)
+</code></pre>
+
+<pre><code>## [1] 11
+</code></pre>
+
+<pre><code class="r">statedata$state.name[11]
+</code></pre>
+
+<pre><code>## [1] Hawaii
+## 50 Levels: Alabama Alaska Arizona Arkansas California ... Wyoming
+</code></pre>
+
+<pre><code class="r">#find the state which the predicted abosulute error is the smallest
+sort(abs(lmfit2$residuals))
+</code></pre>
+
+<pre><code>##        Indiana        Florida       Illinois       Virginia   South Dakota 
+##     0.02158526     0.04460505     0.05244160     0.06691392     0.06839119 
+## North Carolina       New York     California        Georgia   Rhode Island 
+##     0.07624179     0.07937149     0.08564599     0.09694227     0.13992982 
+##           Iowa       Oklahoma           Ohio         Oregon     New Mexico 
+##     0.16347124     0.26139958     0.26548767     0.28445333     0.28880945 
+##       Maryland          Idaho      Louisiana       Nebraska    Connecticut 
+##     0.29851996     0.37010714     0.39044846     0.42967691     0.44541028 
+##      Wisconsin         Nevada  New Hampshire         Alaska        Alabama 
+##     0.47004324     0.49482393     0.49635615     0.54740399     0.56888134 
+##        Vermont       Missouri        Wyoming  Massachusetts      Tennessee 
+##     0.57865019     0.58389969     0.58678863     0.61105391     0.64416651 
+##     New Jersey         Kansas      Minnesota       Michigan        Montana 
+##     0.66612086     0.67648037     0.69440380     0.76106640     0.84024805 
+##           Utah       Kentucky        Arizona   North Dakota    Mississippi 
+##     0.84246817     0.85582067     0.86415671     0.90350550     0.91535384 
+##          Texas   Pennsylvania       Colorado     Washington  West Virginia 
+##     0.92114057     0.95045527     0.95645816     0.96272426     0.96982588 
+##       Delaware       Arkansas South Carolina          Maine         Hawaii 
+##     1.06646884     1.08626119     1.10109172     1.47095411     1.50683146
+</code></pre>
+
+<pre><code class="r">#or 
+which.min(abs(lmfit2$residuals))
+</code></pre>
+
+<pre><code>## Indiana 
+##      14
+</code></pre>
+
+</body>
+
+</html>
+
